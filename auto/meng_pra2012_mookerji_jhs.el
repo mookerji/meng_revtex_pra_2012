@@ -11,6 +11,13 @@
      "eqn:remaining_singlet"
      "eqn:herald_prob"
      "eq:success_prob_def"
+     "fig:beamsplitter_model"
+     "eq:bs_operator_def"
+     "eq:beamsplitter_trans"
+     "eqn:chap3_rho_input"
+     "eqn:chap3_rho_output"
+     "eq:rho_output"
+     "eqn:coefficient_value"
      "sec:herald:communication"
      "fig:entanglement_connection"
      "eqn:chap3:linear_beamsplitter"
@@ -74,5 +81,6 @@
      "showkeys"
      "spdc_dlcz_fin"
      "spdc_dlcz_loss"
+     "beamsplitter"
      "ent_connection")))
 

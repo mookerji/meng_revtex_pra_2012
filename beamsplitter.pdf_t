@@ -1,0 +1,33 @@
+\begin{picture}(0,0)%
+\includegraphics{beamsplitter.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(5288,2444)(429,-3383)
+\put(3676,-2161){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\hat{b}_1,$}%
+}}}}
+\put(4426,-1336){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Basis}%
+}}}}
+\put(4426,-1561){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Transformation}%
+}}}}
+\put(826,-2011){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\hat{\rho}_{\textrm{in}}$}%
+}}}}
+\put(4351,-2011){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\hat{\rho}_{\textrm{out}}=\hat{B}^{\dagger}\pna{\eta}\hat{\rho}_{\textrm{in}} \hat{B}\pna{\eta}$}%
+}}}}
+\put(1876,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\ket{n_1}$}%
+}}}}
+\put(3676,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\ket{N_1}$}%
+}}}}
+\put(2551,-1336){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\hat{b}_2,~~\ket{N_2}$}%
+}}}}
+\put(2551,-3136){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\hat{a}_2,~~\ket{n_2}$}%
+}}}}
+\put(1876,-2161){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\hat{a}_1,$}%
+}}}}
+\end{picture}%

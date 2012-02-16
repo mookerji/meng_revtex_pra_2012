@@ -372,6 +372,119 @@ immediately follows, we will formalize our approach for calculating the joint
 density operator of the light-ensemble system following entanglement
 distribution.
 
+\subsection{Photon Number Probability Distributions}
+
+\begin{figure}[tb]
+	\centering
+	\resizebox{3.00in}{!}{\input beamsplitter.pdf_t}
+	\caption{Beam splitter action on an input density operator $\hat{\rho}_{\textrm{in}}$ with two input ports and two output ports. Labeled at each port are the input and output bases used in Eqns.~\ref{eqn:chap3_rho_input} and~\ref{eqn:chap3_rho_output}. The boson annihilation operations at the input and output are $\hat{a}_i$ and $\hat{b}_i$, respectively, and the accompanying index $i$ represents signal ($i=1$) and auxiliary modes ($i=2$).}
+	\label{fig:beamsplitter_model}
+\end{figure}
+
+Our first task is to concisely represent the effects of propagation loss on
+light beams of arbitrary statistical composition, as shown by the unitary beam
+splitter transformation in Fig.~\ref{fig:beamsplitter_model}.  The matrix
+representation of linear-loss beam splitters in
+Fig.~\ref{fig:channel_loss_model} corresponds to the $\textrm{SU}\pna{2}$ Lie
+group representation from angular momentum
+quantization~\cite{PhysRevA.40.1371}. We can use this equivalence to concisely
+relate the input and output field density operators from the loss using a joint
+photon-number probability distribution.
+
+A two-port beam splitter with quantum efficiency $\eta$ and input-field phase
+shifts $\phi_t$ and $\phi_r$ is described by the general $\textrm{SU}\pna{2}$
+beam splitter operator,
+\eqn{
+\hat{B}\pna{\eta,\phi_t,\phi_r}=e^{-i\pna{\phi_t-\phi_r}\hat{L}_3}e^{-2i\cos^{-1}\pna{\sqrt{\eta}}\hat{L}_2}e^{-i\pna{\phi_t+\phi_r}\hat{L}_3},\label{eq:bs_operator_def}
+}
+where the $\{\hat{L}_i\}$ are the Schwinger angular momentum operators for a
+two-dimensional quantum harmonic oscillator:
+\eqn{
+\hat{L}_1 = \frac{1}{2}\pna{\hat{a}_1^{\dagger}\hat{a}_2+\hat{a}^{\dagger}_2\hat{a}_1} \quad 
+\hat{L}_2 = \frac{1}{2i}\pna{\hat{a}_1^{\dagger}\hat{a}_2-\hat{a}^{\dagger}_2\hat{a}_1}\quad 
+\hat{L}_3 = \frac{1}{2}\pna{\hat{a}_1^{\dagger}\hat{a}_1+\hat{a}^{\dagger}_2\hat{a}_2}.
+}
+Given a joint input state---either a pure state $\ket{\psi}_{\textrm{in}}$, or
+a pure or mixed state $\hat{\rho}_{\textrm{in}}$---of the signal and auxiliary
+inputs, the output state of the beam splitter is
+\eqn{
+\ket{\psi_{\textrm{out}}}=\hat{B}^{\dagger}\pna{\eta,\phi_t,\phi_r}\ket{\psi_{\textrm{in}}}, \qquad 
+\hat{\rho}_{\textrm{out}}=\hat{B}^{\dagger}\pna{\eta,\phi_t,\phi_r}\hat{\rho}_{\textrm{in}}\hat{B}\pna{\eta,\phi_t,\phi_r}.\label{eq:beamsplitter_trans}}
+
+In the number-state representation, as shown in
+Fig.~\ref{fig:beamsplitter_model}, the beam splitter output of a general joint
+input state
+\eqn{
+\hat{\rho}_{\textrm{in}}=\sum_{n_1,n_2=0}^{\infty}\sum_{n_1',n_2'=0}^{\infty}
+\rho_{\textrm{in}}\pna{n_1,n_2;n_1',n_2'}\ket{n_1,n_2}\bra{n_1',n_2'} \label{eqn:chap3_rho_input}
+}
+is,
+\eqn{
+\hat{\rho}_{\textrm{out}}=\sum_{N_1,N_2=0}^{\infty}\sum_{N_1',N_2'=0}^{\infty}
+\rho_{\textrm{out}}\pna{N_1,N_2;N_1',N_2'}\ket{N_1,N_2}\bra{N_1',N_2'},\label{eqn:chap3_rho_output}.
+}
+The output state (Eqn.~\ref{eqn:chap3_rho_output}) follows from the input state
+(Eqn.~\ref{eqn:chap3_rho_input}) by first applying the unitary beam splitter
+transformation in Eqn.~\ref{eq:bs_operator_def}, and then inserting the
+identity operator in the $\ket{N_1,N_2}$ basis. The output matrix elements in
+Eqn.~\ref{eqn:chap3_rho_output} are
+\eqn{\rho_{\textrm{out}}\pna{N_1,N_2;N_1',N_2'}=\sum_{n_1,n_2=0}\sum_{n_1',n_2'=0} B_{N_1,N_2}^{n_1,n_2}\pna{\eta,\phi_t,\phi_r}\pnb{B_{N_1',N_2'}^{n_1',n_2'}\pna{\eta,\phi_t,\phi_r}}^{*}\rho_{\textrm{in}}\pna{n_1,n_2;n_1',n_2'},\label{eq:rho_output}
+}
+where
+\begin{align}
+B_{N_1,N_2}^{n_1,n_2}\pna{\eta,\phi_t,\phi_r} &= \bra{N_1,N_2}\hat{B}^{\dagger}\pna{\eta,\phi_t,\phi_r}\ket{n_1,n_2}\nonumber \\
+& =R_{N_1,N_2}^{n_1,n_2}\pna{\eta} e^{i{\phi_t\pna{N_1-n_2}+\phi_r\pna{N_1-n_1}}}.
+\end{align}
+The transformation coefficients,
+\eqn{
+R_{N_1,N_2}^{n_1,n_2}\pna{\eta}=\abs{B_{N_1,N_2}^{n_1,n_2}\pna{\eta,\phi_t,\phi_r}}=\bra{N_1,N_2}e^{-2i\cos^{-1}\pna{\sqrt{\eta}}\hat{L}_2}\ket{n_1,n_2},
+}
+can be calculated in terms of the Jacobi polynomials $P_n^{\pna{\alpha,\beta}}\pna{x}$ as
+\begin{align}
+	R_{N_1,N_2}^{n_1,n_2}\pna{\eta}=\sqrt{\frac{N_1!N_2!}{n_1!n_2!} \eta^{N_1-n_2}\pna{1-\eta}^{N_1-n_1}}P_{N_2}^{\pna{N_1-n_1,N_1-n_2}}\pna{2\eta-1}, \qquad N_1\geq n_1,n_2,  \label{eqn:coefficient_value}
+\end{align}
+where
+\begin{align}
+P_n^{\pna{\alpha,\beta}}\pna{x} = \frac{\pna{-1}^n}{2^n n!}\pna{1-x}^{-\alpha}\pna{1+x}^{-\beta}\pna{\frac{d}{dx}}^n\pnb{\pna{1-x}^{n+\alpha}\pna{1+x}^{n+\beta}},\nonumber \\
+\alpha,\beta >-1, \quad -1\leq x \leq 1.
+\end{align}
+The restriction $N_1\geq n_1, n_2$ ensures the orthogonality of the Jacobi
+polynomials in Eqn.~\ref{eqn:coefficient_value} over the range of quantum
+efficiency $0\leq \eta \leq 1$; we will extend the range of this coefficient
+shortly. The $R$ coefficient characterizes the output photon-number probability
+distribution for the joint input state $\ket{n_1,n_2}$. For a number-diagonal
+joint input state, it can be shown that
+\eqn{
+    P_{\textrm{out}}\pna{N_1, N_2} = \bra{N_1, N_2} \hat{\rho}_{\textrm{out}}\ket{N_1, N_2}
+    = \sum_{\substack{n_1=0\\n_2=N_1+N_2-n_1}}^{N_1+N_2}P_{\textrm{out}}\pna{N_1, N_2|n_1, n_2} P_{\textrm{in}}\pna{n_1, n_2},}
+where the conditional and joint probabilities are 
+\eqn{
+P_{\textrm{out}}\pna{N_1, N_2|n_1, n_2} = \pnb{R_{N_1,N_2}^{n_1,n_2}\pna{\eta}}^2
+\quad \textrm{and} \quad 
+P_{\textrm{in}}\pna{n_1, n_2} = \rho_{\textrm{in}}\pna{n_1,n_2;n_1,n_2},
+} respectively.
+
+The beam splitter's physical symmetries allow us to extend the Jacobi
+polynomials over the full range photon-number output probabilities:
+\eqn{
+   R_{N_1,N_2}^{n_1,n_2}\pna{\eta} = \left\{
+     \begin{array}{lr}
+        \pna{-1}^{N_1 - n_1} R_{n_1,n_2}^{N_1,N_2}\pna{\eta} & n_2 \leq N_1 < n_1 \\
+       R_{n_2,n_1}^{N_2,N_1}\pna{\eta} & n_1 \leq N_1 < n_2 \\
+	   \pna{-1}^{N_1 - n_1} R_{N_2,N_1}^{n_2,n_1}\pna{\eta} &\qquad n_1 > N_1,~n_2 > N_1 \\
+	0 & n_1+n_2\neq N_1+N_2
+     \end{array}
+\right..}
+We have made the unitary constraint explicit, as the Jacobi polynomials are not
+\emph{ad hoc} restricted to events for which
+$n_1+n_2=N_1+N_2$. Eqn.~\ref{eq:rho_output} simplifies because beam splitter
+unitarity requires $n_1+n_2=N_1+N_2$ and $n_1'+n_2'=N_1'+N_2'$. We thus
+eliminate the second and fourth summations in Eqn.~\ref{eq:rho_output} because
+$n_2=N_1+N_2-n_1$ and $n_2'=N_1'+N_2'-n_1'$, and restrict the remaining first
+and third summation there to $n_1\in\{0,1,\ldots,N_1+N_2\}$ and
+$n_1'\in\{0,1,\ldots,N_1'+N_2'\}$, respectively.
+
+
 \section{Entanglement Connection~\label{sec:herald:communication}}
 
 After successfully distributing entanglement to a pair of nodes, resulting in
@@ -764,9 +877,10 @@ The $F_{xy}$ fidelity is easily seen to be the same as the $F_{yx}$ fidelity,
 as in the heralding probability calculation presented earlier. While the
 $F_{xx}$ and $F_{yy}$ fidelities will also equal, they will differ from the
 cross-polarized fidelities. To find $F_{yy}$, we need to evaluate
-\eqn{
-F_{yy} = \frac{1}{D_1 P_{\textrm{herald}}^{yy}}\langle \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_y^B}|^2}\pna{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \rangle.
-}
+\begin{align}
+F_{yy} & = \frac{1}{D_1 P_{\textrm{herald}}^{yy}}\langle
+\pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_y^B}|^2}\nonumber \\ & \qquad \cdot\pna{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \rangle.
+\end{align}
 The calculation is identical to that for $F_{yx}$ save for the eighth-order
 moment, which factors into
 \begin{align}
