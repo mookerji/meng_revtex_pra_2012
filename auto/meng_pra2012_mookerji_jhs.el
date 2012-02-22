@@ -3,6 +3,17 @@
     (LaTeX-add-bibliographies
      "citations/proposal")
     (LaTeX-add-labels
+     "chap:intro"
+     "sec:intro:architectures"
+     "fig:diagram"
+     "fig:dlcz"
+     "eqn:singlet"
+     "eq:dicke_state"
+     "sec:intro:entanglement"
+     "eq:final_singlet"
+     "fig:chap1:connection"
+     "fig:chap1:teleportation"
+     "fig:chap1:communication"
      "chap:herald"
      "sec:herald:overview"
      "fig:channel_model"
