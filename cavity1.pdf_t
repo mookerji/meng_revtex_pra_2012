@@ -1,0 +1,29 @@
+\begin{picture}(0,0)%
+\includegraphics{cavity1.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(7752,5190)(811,-6139)
+\put(4651,-6061){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\LARGE Dielectric Mirror}%
+}}}}
+\put(6601,-3811){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\huge $\hat{b}_{\textrm{out}}\pna{t}$}%
+}}}}
+\put(6601,-5011){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\huge $\hat{b}_{\textrm{in}}\pna{t}$}%
+}}}}
+\put(3226,-4336){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\huge $\hat{b}\pna{t}$}%
+}}}}
+\put(6601,-1261){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\huge $\hat{a}_{\textrm{out}}\pna{t}$}%
+}}}}
+\put(6601,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\huge $\hat{a}_{\textrm{in}}\pna{t}$}%
+}}}}
+\put(3226,-1786){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\huge $\hat{a}\pna{t}$}%
+}}}}
+\put(826,-6061){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\LARGE Reflective Mirror ($R=1$)}%
+}}}}
+\end{picture}%
