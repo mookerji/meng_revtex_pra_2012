@@ -15,8 +15,6 @@
      "sec:intro:entanglement"
      "eq:final_singlet"
      "fig:chap1:connection"
-     "fig:chap1:teleportation"
-     "fig:chap1:communication"
      "chap:herald"
      "sec:herald:overview"
      "fig:channel_model"
@@ -48,7 +46,8 @@
      "eq:yx:moment"
      "eq:yy:moment"
      "eqn:fyx_nrpd"
-     "chap:conclusion")
+     "chap:conclusion"
+     "sec:atomic:dlcz")
     (TeX-add-symbols
      '("abs" 1)
      '("soln" 1)

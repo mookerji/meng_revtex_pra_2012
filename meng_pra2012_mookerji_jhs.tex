@@ -493,15 +493,55 @@ assuming that each mode begins from rest, we can also say that
 \eqn{
 \hat{N}_{abc}= 2\hat{a}^{\dagger}\hat{a}+\hat{b}^{\dagger}\hat{b} +\hat{S}^{\dagger}\hat{S} \qquad \hat{N}_{bc}=\hat{b}^{\dagger}\hat{b}-\hat{S}^{\dagger}\hat{S}
 }
-are conserved quantities. assuming that each mode begins from rest, we can also say that 
-\eqn{
-\hat{N}_{abc}= 2\hat{a}^{\dagger}\hat{a}+\hat{b}^{\dagger}\hat{b} +\hat{S}^{\dagger}\hat{S} \qquad \hat{N}_{bc}=\hat{b}^{\dagger}\hat{b}-\hat{S}^{\dagger}\hat{S}
-}
-are conserved quantities. As an aside, it is worth noting a competing approach
-to photon storage that may serve as a useful comparison in the future, namely,
-the usage of stimulated Raman transitions and electromagnetically induced
-transparency (EIT) to increase the coupling of an input quantum field with an
-atomic
+are conserved quantities. In Chapter~\ref{chap:herald}, we assume an
+\emph{anzatz} solution such that $N$ entangled photons are absorbed by an
+ensemble memory and are converted, without loss, to $N$ spin excitations and
+$N$ heralding photons. Justifications for this assumption are provided in
+Appendix~\ref{chap:appb} using the algebraic symmetries of
+Eqn.~\ref{eqn:final_tri_ham} and a numerical simulation, respectively. Note
+that that operations preserving the Gaussian properties of a quantum state's
+Wigner function (e.g., for polarization-entangled light) must be quadratic in
+its boson operator terms~\cite{RevModPhys.77.513}. Any quadratic interaction
+Hamiltonian is thus a Gaussian operation, and the solutions for its
+input-output behavior is a Bogoliubov transformation of the input
+modes. However, it is not even possible to determine the analytical dynamics
+for Eqn.~\ref{eqn:final_tri_ham}, because it is not a quadratic Hamiltonian. In
+the following section, we will describe some subtleties and prospects for
+achieving strong interactions between quantized excitations, in the trilinear
+case. 
+
+We can compensate for finite detunings and heralding probabilities in these
+ensembles by increasing the ensemble's optical depth, which is limited in
+free-space interactions by ensemble size and coupling strength. Several
+approaches use multi-pass optical cavities to increase the likelihood of a
+successful Raman scattering event between a cavity field and the enclosed
+ensemble~\cite{PhysRevLett.92.123601, PhysRevLett.95.133601,
+  PhysRevLett.98.190503,Thompson07072006,PhysRevLett.98.183601}. The
+cavity-ensemble heralding efficiency is captured by the cooperativity parameter
+$C=g_c^2 N_A/\kappa_c \gamma$ , where $g_c$ is the single-atom coupling
+constant to the cavity mode, $\kappa_c$ is the cavity decay rate, and $\gamma$
+is the excited state spontaneous decay rate. It can be shown that the
+cooperativity is approximately $C\sim fd$, where $d$ is the optical depth of
+the ensemble and the finesse ${f}$ is approximately the number of passes the
+optical field makes in the cavity. Optical cavities are used in the magnon-type
+memory (Fig.~\ref{fig:chap2:magnon_schematic}), in which a single collective
+excitation is shared between between two spatially-overlapping atomic ensembles
+~\cite{PhysRevLett.103.043601}. Photons of arbitrary polarization states are
+stored between two ensembles that absorb only left- ($\sigma^{+}$) and
+right-circularly ($\sigma^{-}$) polarized light, respectively, and emit only
+linearly ($\pi$) polarized light into the cavity resonator, thereby eliminating
+any which-path information. The memory itself is an ensemble of approximately
+8000 cesium atoms loaded from a far-detuned magneto optical trap (MOT) into a
+one-dimensional optical lattice overlapping a medium-finesse ($f=140$) optical
+cavity. A spatially homogenous, DC magnetic field allows time-dependent control
+of polarization storage through Larmor precession of the ensembles magnetic
+moment. In theory, single-photon conversion efficiencies for this type of
+magnon memory are quite high.
+
+As an aside, it is worth noting a competing approach to photon storage that may
+serve as a useful comparison in the future, namely, the usage of stimulated
+Raman transitions and electromagnetically induced transparency (EIT) to
+increase the coupling of an input quantum field with an atomic
 ensemble~\cite{PhysRevA.65.022314,RevModPhys.75.457,PhysRevLett.98.123601,PhysRevA.76.033804}. In
 this approach, an external coherent control field couples the $\ket{e}-\ket{s}$
 transition in a $\Lambda$-type atom, adiabatically reducing the group velocity
@@ -530,9 +570,10 @@ pump~\cite{1367-2630-4-1-347, 1464-4266-2-1-101}. Following interference, the
 output fields are in an entangled, zero-mean Gaussian pure state with the
 normally-ordered and phase-sensitive correlation functions
 \begin{align}
-\langle \hat{A}^{\dagger}_{k_j}\pna{t+\tau} \hat{A}_{k_j}\pna{t}\rangle & =\frac{G \Gamma}{2} 
+&\langle \hat{A}^{\dagger}_{k_j}\pna{t+\tau} \hat{A}_{k_j}\pna{t}\rangle = \frac{G \Gamma}{2} 
 \pnb{\frac{e^{-\pna{1-G}\Gamma \abs{\tau}}}{1-G}-\frac{e^{-\pna{1+G}\Gamma \abs{\tau}}}{1+G}}\nonumber \\
-\langle \hat{A}_{S_j}\pna{t+\tau} \hat{A}_{I_j}\pna{t}\rangle & =\frac{\pna{-1}^{j-1}G \Gamma}{2} 
+&\langle \hat{A}_{S_j}\pna{t+\tau} \hat{A}_{I_j}\pna{t}\rangle \nonumber \\ 
+& \qquad =\frac{\pna{-1}^{j-1}G \Gamma}{2} 
 \pnb{\frac{e^{-\pna{1-G}\Gamma \abs{\tau}}}{1-G}+\frac{e^{-\pna{1+G}\Gamma \abs{\tau}}}{1+G}},	
 \end{align}
 where $\{\hat{A}_{k_j}\pna{t}e^{-j\omega_k
@@ -540,9 +581,11 @@ where $\{\hat{A}_{k_j}\pna{t}e^{-j\omega_k
 of this process at a detuning $\Delta \omega$ is given by expanding out the
 number ket representations of the OPAs to first order,
 \begin{align}
-\ket{\psi}_{\textrm{SI}} & = \sum_n \sqrt{\frac{\bar{N}}{\pna{\bar{N}+1}^{n+1}}} \ket{n}_{S_x}\ket{n}_{I_y} \otimes \sum_n \pna{-1}^n \sqrt{\frac{\bar{N}}{\pna{\bar{N}+1}^{n+1}}} \ket{n}_{S_y}\ket{n}_{I_x} \nonumber \\
-& \approx\frac{1}{\bar{N}+1} \ket{0}_{S_x}\ket{0}_{I_y}\ket{0}_{S_y}\ket{0}_{I_x}+ \sqrt{\frac{\bar{N}}{\pna{\bar{N}+1}^{3}}}\pna{\ket{1}_{S_x}\ket{1}_{I_y}\ket{0}_{S_y}\ket{0}_{I_x}-\ket{0}_{S_x}\ket{0}_{I_y}\ket{1}_{S_y}\ket{1}_{I_x}}\nonumber \\
-& = \ket{\textrm{vac}}+\sqrt{\frac{\bar{N}}{\pna{\bar{N}+1}^{3}}}\pna{\ket{H}_S\ket{V}_I-\ket{V}_S\ket{H}_I},\label{eq:final_singlet}
+\ket{\psi}_{\textrm{SI}} & = \sum_n
+\sqrt{\frac{\bar{N}}{\pna{\bar{N}+1}^{n+1}}} \ket{n}_{S_x}\ket{n}_{I_y}
+\nonumber \\ & \qquad \otimes \sum_n \pna{-1}^n \sqrt{\frac{\bar{N}}{\pna{\bar{N}+1}^{n+1}}} \ket{n}_{S_y}\ket{n}_{I_x} \nonumber \\
+%& \approx\frac{1}{\bar{N}+1} \ket{0}_{S_x}\ket{0}_{I_y}\ket{0}_{S_y}\ket{0}_{I_x}+ \sqrt{\frac{\bar{N}}{\pna{\bar{N}+1}^{3}}}\pna{\ket{1}_{S_x}\ket{1}_{I_y}\ket{0}_{S_y}\ket{0}_{I_x}-\ket{0}_{S_x}\ket{0}_{I_y}\ket{1}_{S_y}\ket{1}_{I_x}}\nonumber \\
+& \approx \ket{\textrm{vac}}+\sqrt{\frac{\bar{N}}{\pna{\bar{N}+1}^{3}}}\pna{\ket{H}_S\ket{V}_I-\ket{V}_S\ket{H}_I},\label{eq:final_singlet}
 \end{align}
 where $\bar{N}=4G^2/\pnb{\pna{1-G^2-\Delta
     \omega^2/\Gamma^2}^2+4\Delta\omega^2/\Gamma^2}$ is the average photon
@@ -581,18 +624,10 @@ ${\bra{\psi_{\textrm{in}}} \hat{\rho}_{\textrm{out}} \ket{\psi_{\textrm{in}}}}$
 when the input is the pure state
 $\hat{\rho}_{\textrm{in}}=\ket{\psi_{\textrm{in}}} \bra{\psi_{\textrm{in}}}$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \centering
-\subfigure[Principle of a quantum repeater architecture. Entanglement is independently created at short distances between nodes $\textrm{AB}\ldots\textrm{YZ}$. Entanglement is swapped between neighboring links such that locations A and D, for example, share entanglement over an intermediate distance. Swapping occurs over successively larger distances until links at the desired separation, A and Z, are entangled. Figure based on~\cite{2009arXiv0906.2699S}.]{
-\includegraphics[width=0.90\textwidth]{figures/connection.pdf}
-\label{fig:chap1:connection}
-}
-\subfigure[Optical qubit teleportation. Two nodes sharing entanglement can teleport a qubit using local Bell measurements and a classical communication channel. Figure based on~\cite{6_453}.]{
-\includegraphics[width=0.90\textwidth]{figures/teleportation.pdf}
-\label{fig:chap1:teleportation}
-}
-\label{fig:chap1:communication}
-\caption{Fundamentals of quantum communication using entanglement connection and teleportation.}
+\includegraphics[width=0.50\textwidth]{figures/connection.pdf}
+\caption{\label{fig:chap1:connection} Principle of a quantum repeater architecture. Entanglement is independently created at short distances between nodes $\textrm{AB}\ldots\textrm{YZ}$. Entanglement is swapped between neighboring links such that locations A and D, for example, share entanglement over an intermediate distance. Swapping occurs over successively larger distances until links at the desired separation, A and Z, are entangled. Figure based on~\cite{2009arXiv0906.2699S}.}
 \end{figure}
 
 The most immediate problem affecting the distribution of polarization-entangled
@@ -618,17 +653,23 @@ between memories A and Z that are separated by a distance $L$ by independently
 creating entanglement at $N$ equally-spaced adjacent nodes out of $2N$
 memories. $N-1$ entanglement swapping operations in this network ultimately
 entangle memories A and Z. For the repeater protocol to work in an asynchronous
-fashion, these links must be heralding quantum memories.
-
-Once entanglement distribution is successful, we can carry out long-distance
-quantum communication using teleportation, a protocol described in
-Fig.~\ref{fig:chap1:teleportation}. In qubit teleportation, Charlie (C) sends a
-message (M) to Bob (B) using Alice (A) as an intermediary. Charlie's message is
-in the form of an arbitrary, unknown qubit spanned by the orthonormal basis
-$\{\ket{0},\ket{1}\}$ represented by $\ket{\psi}_C=\alpha
-\ket{0}_C+\beta\ket{1}_C$, where $\abs{\alpha}^2+\abs{\beta}^2=1$. Together,
+fashion, these links must be heralding quantum memories. Together,
 entanglement repeaters and teleportation form basis for high-fidelity
 communications of quantum states over long distances.
+
+\begin{comment}
+
+  Once entanglement distribution is successful, we can carry out long-distance
+  quantum communication using teleportation, a protocol described in
+  Fig.~\ref{fig:chap1:teleportation}. In qubit teleportation, Charlie (C) sends
+  a message (M) to Bob (B) using Alice (A) as an intermediary. Charlie's
+  message is in the form of an arbitrary, unknown qubit spanned by the
+  orthonormal basis $\{\ket{0},\ket{1}\}$ represented by $\ket{\psi}_C=\alpha
+  \ket{0}_C+\beta\ket{1}_C$, where $\abs{\alpha}^2+\abs{\beta}^2=1$. Together,
+  entanglement repeaters and teleportation form basis for high-fidelity
+  communications of quantum states over long distances.
+
+\end{comment}
 
 
 
@@ -1421,6 +1462,66 @@ to the propagation of optical fields? Answers to these questions could possibly
 alleviate the exhausting notational and computational difficulties currently
 necessitated by number-state analysis.
 
+\subsection{Engineering Quantized Field Absorption\label{sec:atomic:dlcz}}
+
+We can compensate for finite detunings and heralding probabilities in these
+ensembles by increasing the ensemble's optical depth, which is limited in
+free-space interactions by ensemble size and coupling strength. Several
+approaches use multi-pass optical cavities to increase the likelihood of a
+successful Raman scattering event between a cavity field and the enclosed
+ensemble~\cite{PhysRevLett.92.123601, PhysRevLett.95.133601,
+  PhysRevLett.98.190503,Thompson07072006,PhysRevLett.98.183601}. The
+cavity-ensemble heralding efficiency is captured by the cooperativity parameter
+$C=g_c^2 N_A/\kappa_c \gamma$ , where $g_c$ is the single-atom coupling
+constant to the cavity mode, $\kappa_c$ is the cavity decay rate, and $\gamma$
+is the excited state spontaneous decay rate. It can be shown that the
+cooperativity is approximately $C\sim fd$, where $d$ is the optical depth of
+the ensemble and the finesse ${f}$ is approximately the number of passes the
+optical field makes in the cavity. Optical cavities are used in the magnon-type
+memory (Fig.~\ref{fig:chap2:magnon_schematic}), in which a single collective
+excitation is shared between between two spatially-overlapping atomic ensembles
+~\cite{PhysRevLett.103.043601}. Photons of arbitrary polarization states are
+stored between two ensembles that absorb only left- ($\sigma^{+}$) and
+right-circularly ($\sigma^{-}$) polarized light, respectively, and emit only
+linearly ($\pi$) polarized light into the cavity resonator, thereby eliminating
+any which-path information. The memory itself is an ensemble of approximately
+8000 cesium atoms loaded from a far-detuned magneto optical trap (MOT) into a
+one-dimensional optical lattice overlapping a medium-finesse ($f=140$) optical
+cavity. A spatially homogenous, DC magnetic field allows time-dependent control
+of polarization storage through Larmor precession of the ensembles magnetic
+moment. In theory, single-photon conversion efficiencies for this type of
+magnon memory are quite high. It was also shown in
+Section~\ref{sec:atomic:dicke} and Appendix~\ref{chap:appb} that a heralding
+quantum memory operating with a single- or few-photon pump field performs a
+`non-Gaussian' operation because of its Hamiltonian's
+(Eqn.~\ref{eqn:final_tri_ham}) algebraic symmetries. Several approaches exist
+for enhancing nonlinear optical effects between optical and ensemble
+excitations, such as optically imprinted Bragg mirrors
+(\cite{PhysRevLett.89.143602, nature02176}), interactions between ensembles of
+atoms in optical lattices (\cite{PhysRevLett.100.063601}), and atomic blockades
+using Rydberg-level atoms (\cite{PhysRevLett.87.037901}). 
+
+Bandwidth requirements for atomic ensembles impose restrictions on the phase
+matching bandwidth of our polarization-entanglement source. In
+Section~\ref{sec:intro:entanglement}, we introduced OPA sources for
+polarization entanglement. To be compatible with ensemble-based quantum
+memories and enable efficient quantum state transfer, the signal and idler
+output fields must be nearly-resonant with the center frequency of the desired
+atomic transition and have a narrow spectral bandwidth---anywhere between 10
+and 100 MHz---matching that of the ensemble~\cite{2009arXiv0906.2699S}. 
+
+There are two techniques for reducing the spectral bandwidth of the output from
+spontaneous parametric down conversion. The first is cavity-enhanced down
+conversion, in which a nonlinear crystal in a cavity will only emit light in
+prescribed cavity modes. Because cavity output is spectrally multimode, a
+Fabry-Perot etalon or filter cavity is required to select a single cavity
+mode~\cite{PhysRevLett.97.223601, PhysRevLett.102.063603}. Recently, groups
+have created type-II polarization entanglement sources compatible with
+alkali-gas ensembles of rubidium and cesium by applying spectral filtering and
+frequency locking, resulting in bandwidths of 2.7 MHz and 9.6 MHz, and
+corresponding spectral brightnesses of approximately 330 and 6 entangled pairs
+per second per mW of pump power per MHz of output
+bandwidth~\cite{scholz:201105, PhysRevLett.101.190501}.
 
 % Specify following sections are appendices. Use \appendix* if there
 % only one appendix.
