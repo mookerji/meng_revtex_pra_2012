@@ -229,119 +229,64 @@ difficulty by storing and processing quantum information locally in quantum
 memories: first, as repeaters increasing network scalability, and second, as
 light-matter interfaces to quantum computers~\cite{nature07127}.
 
-The aim of this thesis is to address the following open problem: the
-theoretical limits of atomic-ensemble quantum memories that store polarization
-entanglement. It is part of a larger research program in RLE's Optical and
-Quantum Communications Group investigating the system performance of
-ensemble-based hybrid systems in quantum communication. This thesis marries the
-formalism of collective interactions of atomic ensembles and quantum optical
-fields with a number-state analysis of our architecture's performance. The
-remainder of this chapter introduces pre-existing memory and repeater
-architectures forming the foundation of this work, discusses the importance of
-polarization entanglement to quantum communication, and outlines the
-contributions made in this thesis.
+We address the following open problem: the theoretical limits of
+atomic-ensemble quantum memories that store polarization entanglement and the
+system performance of ensemble-based hybrid systems in quantum
+communication. The overall approach marries the formalism of collective
+interactions of atomic ensembles and quantum optical fields with a number-state
+analysis of our architecture's performance. This analysis focuses on four
+areas. We first introduce pre-existing memory and repeater architectures
+forming the foundation of this work, and discusses the importance of
+polarization entanglement to quantum communication
+(Section~\ref{chap:intro}). We also summarize the atomic physics concerning the
+interactions between multi-atom ensembles and quantized light fields,
+particularly in the context of three-level Raman interactions. We abstract
+quantized light-ensemble interactions within a heralding atomic memory as a
+trilinear Hamiltonian and determine that these interactions preclude a Gaussian
+state analysis of local entanglement distribution.
 
-% quantum information perspective and overview
-To date, the theoretical progress of quantum information science and
-engineering has surpassed its experimental achievements. This thesis paints a
-detailed picture of what future long-distance quantum communication networks
-might look like, and their limitations. In the course of this work, we have
-analyzed quantum networks that distribute polarization entanglement using
-neutral atomic ensembles. This analysis focuses on three areas. We first
-abstracted quantized light-ensemble interactions within a heralding atomic
-memory and determined that these interactions preclude a Gaussian state
-analysis of local entanglement distribution (Chapter~\ref{chap:atomic},
-Appendix~\ref{chap:appb}). After describing the potential losses in an
-entanglement distribution architecture, we applied the $\textrm{SU}\pna{2}$
-representation of beam splitter operators to model loss in a number state
-basis, and performed a Gaussian state analysis of polarization entanglement
-swapping (Chapter~\ref{chap:herald}). A number-state analysis of the
+After describing the potential losses in an entanglement distribution
+architecture, we apply the $\textrm{SU}\pna{2}$ representation of beam splitter
+operators to model loss in a number state basis, and perform a Gaussian state
+analysis of polarization entanglement swapping (Section~\ref{chap:herald}
+and~\ref{sec:herald:communication}). A number-state analysis of the
 entanglement distribution captures the joint state of the heralding light and
 atomic excitations, accounting for imperfections in transmission loss,
 photodetection efficiency and counting resolution, and multiple-pair events at
-the downconversion source.
+the entanglement source. This numerical characterization of entanglement
+distribution and connection presented here is so far consistent with our
+physical intuition of how such networks should behave. In particular, the
+probability of a successful heralding event is independent of whether a single,
+significant, uniform efficiency loss is located either before or after an
+ensemble memory, or during photodetection. With regards to the probability
+measuring a single photon, all losses are effectively the same. The same is not
+true for fidelity of entanglement distribution. A uniform transmission loss
+between the entanglement source and the ensembles will significantly reduce the
+likelihood that you've stored a polarization Bell state, but significant
+quantum efficiency losses at photodetection are less likely to diminish that
+fidelity. Increasing the pump power at the entanglement source increases the
+likelihood of multiple-pair events, increasing the heralding probability but
+making the fidelity more sensitive to transmission and photodetection
+efficiency losses. These results are true for both number-resolving and
+non-resolving photodetectors. For both entanglement distribution and
+connection, heralding probabilities for non-resolving detectors are higher, but
+the fidelities are significantly lower. Many of these same issues appear in
+entanglement swapping as well.
 
-% Findings 
-
-The numerical characterization of entanglement distribution and connection
-presented in this thesis is so far consistent with our physical intuition of
-how such networks should behave. In particular, the probability of a successful
-heralding event is independent of whether a single, significant, uniform
-efficiency loss is located either before or after an ensemble memory, or during
-photodetection. With regards to the probability measuring a single photon, all
-losses are effectively the same. The same is not true for fidelity. A uniform
-transmission loss between the entanglement source and the ensembles will
-significantly reduce the likelihood that you've stored a polarization Bell
-state, but significant quantum efficiency losses at photodetection are less
-likely to diminish that fidelity. Increasing the pump power at the entanglement
-source increases the likelihood of multiple-pair events, increasing the
-heralding probability but making the fidelity more sensitive to transmission
-and photodetection efficiency losses. These results are true for both
-number-resolving and non-resolving photodetectors. For both entanglement
-distribution and connection, heralding probabilities for non-resolving
-detectors are higher, but the fidelities are significantly lower. Many of these
-same issues appear in entanglement swapping as well.
-
-Using Gaussian-state outputs from the OPA's, we can quantify fidelity loss in
-entanglement distribution by accounting for multiple-pair effects, fiber
-propagation loss, photodetection limitations, and phase mismatch between atomic
-ensembles. A Gaussian-state analysis for finite atomic ensembles, while valid
-for the DLCZ protocol, is not applicable for the distribution of
-externally-generated entanglement. The discussion in this thesis focuses on
-building a new abstraction for quantum memories and a corresponding formalism
-for its  architectural analysis.
-
-The remainder of the thesis is organized as follows:
-
-\begin{itemize}
-	\item \textbf{Chapter~\ref{chap:atomic}} summarizes the atomic physics
-          concerning the interactions between multi-atom ensembles and
-          quantized light fields. Sections~\ref{sec:atomic:fields}
-          and~\ref{sec:atomic:dicke} formally introduce quantized fields and
-          common assumptions regarding their interactions with collective
-          atomic states, particularly in the context of three-level Raman
-          interactions. In Section~\ref{sec:atomic:dlcz}, we apply this
-          formalism to derive the trilinear Hamiltonian describing a heralding
-          DLCZ-type memory.  
-
-	\item \textbf{Chapter~\ref{chap:herald}} synthesizes the primary
-          theoretical results of this thesis: an architectural analysis of a
-          DLCZ-type quantum communication system, driven by a dual-OPA source,
-          with particular emphasis paid to multiple-pair effects. In
-          Section~\ref{sec:herald:overview}, we provide an overview of this
-          architecture and discuss relevant experimental parameters for a
-          prototype system.  Assuming perfect absorption by the memories, we
-          determine the fidelity and success probability of our heralding
-          architecture in Section~\ref{sec:herald:number} by applying a
-          number-state analysis. Section~\ref{sec:herald:communication} applies
-          a Gaussian state analysis to polarization entanglement connection.
-
-	\item \textbf{Chapter~\ref{chap:conclusion}} summarizes our theoretical
-          results and discusses possible future directions for studying
-          architectures for quantum communication with polarization
-          entanglement.
-
-	\item \textbf{Appendix~\ref{chap:appb}} presents a Quantum Monte Carlo
-          simulation of the pump, signal, and idler modes of a trilinear
-          Hamiltonian. We'll use this simulation to: (i) justify an
-          \emph{ansatz} solution in the Chapter~\ref{chap:herald}'s
-          number-state analysis; and (ii) explain why approximate solutions in
-          the literature fail to adequately describe memory-loading
-          dynamics. Section~\ref{sec:appb:tri} argues that trilinear
-          Hamiltonians are not analytically diagonizable using a finite Lie
-          group representation. Section~\ref{sec:appc} lists the code for the
-          numerical simulation of the trilinear Hamiltonian's associated master
-          equation. 
-\end{itemize}
-
-
+Section~\ref{chap:conclusion} discusses possible future directions for studying
+architectures for quantum communication with polarization entanglement, such as
+the formalization of our number-state analysis, the inclusion of spin
+decoherence in quantum memories, and experimental issues relevant to the
+realization of these systems (e.g., spectral bandwidth requirements of the
+entanglement source, optical depth and Raman interaction in neutral atomic
+gases).
 
 \subsection{Architectures for Long-Distance Quantum Networks\label{sec:intro:architectures}}
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.39\textwidth]{figures/node}
-  	\includegraphics[width=0.59\textwidth]{figures/level_structure_opa1}
+  	\includegraphics[width=0.50\textwidth]{figures/level_structure_opa1}
 	\caption{Components of a quantum repeater node in the MIT-NU architecture. (a) Parametric downconversion creates pairs of polarization-entangled photons, sending the idler photon to atom-trap 1 and the signal photon to atom-trap 2. Each trap contains a single ultra-cold rubidium atom cooled to its hyperfine ground state. In the energy level diagram, the AB-transition absorbs 795 nm photons, and the BD-transition is coherently driven, thereby enabling storage at D. (b) Polarization-entangled photon pairs generated by a pair of type-II optical parametric amplifiers (OPAs) and a polarizing beam splitter (PBS). The polarizations $\hat{x}$ and $\hat{y}$ are denoted by arrows and bullets, respectively. Figures taken from~\cite{PhysRevLett.87.167903} and~\cite{1464-4266-2-1-101}.}
 	\label{fig:diagram}
 \end{figure}
@@ -349,7 +294,7 @@ The remainder of the thesis is organized as follows:
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.40\textwidth]{figures/dlcz}
-  	\includegraphics[width=0.55\textwidth]{figures/dlcz_entanglement}
+  	\includegraphics[width=0.50\textwidth]{figures/dlcz_entanglement}
 	\caption{Entanglement with the DLCZ protocol. (Left) Weak and strong coherent pulses induce writing and and reading through spontaneous Raman transitions, respectively. (Right) Measurement-induced interference results in a single-excitation entangled state.  Figures taken from~\cite{nature07127} and~\cite{nature35106500}.}
 	\label{fig:dlcz}
 \end{figure}
@@ -483,7 +428,9 @@ where
 \hat{H}_0=\omega_a \hat{a}^{\dagger}\hat{a}+\omega_b \hat{b}^{\dagger}\hat{b}+\omega_S \hat{S}^{\dagger}\hat{S}
 }
 \eqn{
-\hat{H}_{\textrm{int}}=\Gamma \hat{a}\hat{b}^{\dagger}\hat{S}^{\dagger}+\Gamma^* \hat{S}\hat{b}\hat{a}^{\dagger}
+\hat{H}_{\textrm{int}}=\Gamma
+\hat{a}\hat{b}^{\dagger}\hat{S}^{\dagger}+\Gamma^*
+\hat{S}\hat{b}\hat{a}^{\dagger} \label{eqn:final_tri_ham}
 }
 with 
 \eqn{
@@ -493,22 +440,19 @@ assuming that each mode begins from rest, we can also say that
 \eqn{
 \hat{N}_{abc}= 2\hat{a}^{\dagger}\hat{a}+\hat{b}^{\dagger}\hat{b} +\hat{S}^{\dagger}\hat{S} \qquad \hat{N}_{bc}=\hat{b}^{\dagger}\hat{b}-\hat{S}^{\dagger}\hat{S}
 }
-are conserved quantities. In Chapter~\ref{chap:herald}, we assume an
+are conserved quantities. In Section~\ref{chap:herald}, we assume an
 \emph{anzatz} solution such that $N$ entangled photons are absorbed by an
 ensemble memory and are converted, without loss, to $N$ spin excitations and
-$N$ heralding photons. Justifications for this assumption are provided in
-Appendix~\ref{chap:appb} using the algebraic symmetries of
-Eqn.~\ref{eqn:final_tri_ham} and a numerical simulation, respectively. Note
-that that operations preserving the Gaussian properties of a quantum state's
-Wigner function (e.g., for polarization-entangled light) must be quadratic in
-its boson operator terms~\cite{RevModPhys.77.513}. Any quadratic interaction
-Hamiltonian is thus a Gaussian operation, and the solutions for its
-input-output behavior is a Bogoliubov transformation of the input
-modes. However, it is not even possible to determine the analytical dynamics
-for Eqn.~\ref{eqn:final_tri_ham}, because it is not a quadratic Hamiltonian. In
-the following section, we will describe some subtleties and prospects for
-achieving strong interactions between quantized excitations, in the trilinear
-case. 
+$N$ heralding photons.  Note that that operations preserving the Gaussian
+properties of a quantum state's Wigner function (e.g., for
+polarization-entangled light) must be quadratic in its boson operator
+terms~\cite{RevModPhys.77.513}. Any quadratic interaction Hamiltonian is thus a
+Gaussian operation, and the solutions for its input-output behavior is a
+Bogoliubov transformation of the input modes. However, it is not even possible
+to determine the analytical dynamics for Eqn.~\ref{eqn:final_tri_ham}, because
+it is not a quadratic Hamiltonian. In the following section, we will describe
+some subtleties and prospects for achieving strong interactions between
+quantized excitations, in the trilinear case.
 
 We can compensate for finite detunings and heralding probabilities in these
 ensembles by increasing the ensemble's optical depth, which is limited in
@@ -524,19 +468,18 @@ is the excited state spontaneous decay rate. It can be shown that the
 cooperativity is approximately $C\sim fd$, where $d$ is the optical depth of
 the ensemble and the finesse ${f}$ is approximately the number of passes the
 optical field makes in the cavity. Optical cavities are used in the magnon-type
-memory (Fig.~\ref{fig:chap2:magnon_schematic}), in which a single collective
-excitation is shared between between two spatially-overlapping atomic ensembles
-~\cite{PhysRevLett.103.043601}. Photons of arbitrary polarization states are
-stored between two ensembles that absorb only left- ($\sigma^{+}$) and
-right-circularly ($\sigma^{-}$) polarized light, respectively, and emit only
-linearly ($\pi$) polarized light into the cavity resonator, thereby eliminating
-any which-path information. The memory itself is an ensemble of approximately
-8000 cesium atoms loaded from a far-detuned magneto optical trap (MOT) into a
-one-dimensional optical lattice overlapping a medium-finesse ($f=140$) optical
-cavity. A spatially homogenous, DC magnetic field allows time-dependent control
-of polarization storage through Larmor precession of the ensembles magnetic
-moment. In theory, single-photon conversion efficiencies for this type of
-magnon memory are quite high.
+memory, in which a single collective excitation is shared between between two
+spatially-overlapping atomic ensembles ~\cite{PhysRevLett.103.043601}. Photons
+of arbitrary polarization states are stored between two ensembles that absorb
+only left- ($\sigma^{+}$) and right-circularly ($\sigma^{-}$) polarized light,
+respectively, and emit only linearly ($\pi$) polarized light into the cavity
+resonator, thereby eliminating any which-path information. The memory itself is
+an ensemble of approximately 8000 cesium atoms loaded from a far-detuned
+magneto optical trap (MOT) into a one-dimensional optical lattice overlapping a
+medium-finesse ($f=140$) optical cavity. A spatially homogenous, DC magnetic
+field allows time-dependent control of polarization storage through Larmor
+precession of the ensembles magnetic moment. In theory, single-photon
+conversion efficiencies for this type of magnon memory are quite high.
 
 As an aside, it is worth noting a competing approach to photon storage that may
 serve as a useful comparison in the future, namely, the usage of stimulated
@@ -680,7 +623,7 @@ communications of quantum states over long distances.
   Ensembles\label{chap:herald}}
 
 This chapter combines the operating principles of ensemble-based quantum
-memories, as described in Chapter~\ref{chap:atomic}, with architectures for
+memories, as described in Section~\ref{chap:atomic}, with architectures for
 polarization entanglement distribution, entanglement connection, and quantum
 teleportation. We will first discuss our architecture for entanglement
 distribution and provide a very basic abstraction for quantum memories. The
@@ -1414,8 +1357,7 @@ indicative of a singlet state remaining in the idler ensembles.
 \section{Summary and Outlook~\label{chap:conclusion}}
 
 % Extensions
-
-Two areas in this thesis are particularly ripe for extension and exploration:
+Two areas in this paper are particularly ripe for extension and exploration:
 further investigation into the mechanisms and imperfections of ensemble
 memories that distribute polarization entanglement, and formalizing the number
 state analysis of systems with loss-modeling beam splitters. Several possible
@@ -1423,24 +1365,23 @@ extensions are relatively straightforward, such as the inclusion of phase
 offsets between orthogonally-polarized paths in during entanglement
 distribution. Others require a more careful consideration of the underlying
 physics of quantum memories. For example, the performance analysis of
-polarization entanglement distribution presented in this thesis omits the
-presence of spin decoherence in the atomic ensembles. In quantifying the
-singlet-storage fidelity, there is a tradeoff between the time scale of
-decoherence of Dicke excitations, the time it takes for a single heralding
-photon to reach a photodetector, and the post-memory transmission efficiency
-(which scales with the post-transmission length). Spin decoherence of the
-ensemble may therefore be a significant factor limiting the optimal physical
-distance that local entanglement distribution can cover. Another possible
-departure would be to discard the DLCZ approach entirely, using a stimulated
-Raman or EIT approach, instead of a spontaneous Raman process. The Hamiltonian
-in this approach would be amenable to a traditional Gaussian state analysis,
-and would allow for deterministic control of read and write processes in
-entanglement distribution. As of the writing of this thesis, however, there is
-currently no accepted means of nondestructive verification of successful
-entanglement distribution in a coherently-controlled $\Lambda$-level atomic
-ensemble. This open problem makes certain long-distance quantum communication
-tasks, such as repeated entanglement connection, difficult to accomplish using
-a driven Raman process.
+polarization entanglement distribution presented here omits the presence of
+spin decoherence in the atomic ensembles. In quantifying the singlet-storage
+fidelity, there is a tradeoff between the time scale of decoherence of Dicke
+excitations, the time it takes for a single heralding photon to reach a
+photodetector, and the post-memory transmission efficiency (which scales with
+the post-transmission length). Spin decoherence of the ensemble may therefore
+be a significant factor limiting the optimal physical distance that local
+entanglement distribution can cover. Another possible departure would be to
+discard the DLCZ approach entirely, using a stimulated Raman or EIT approach,
+instead of a spontaneous Raman process. The Hamiltonian in this approach would
+be amenable to a traditional Gaussian state analysis, and would allow for
+deterministic control of read and write processes in entanglement
+distribution. As of this writing, however, there is currently no accepted means
+of nondestructive verification of successful entanglement distribution in a
+coherently-controlled $\Lambda$-level atomic ensemble. This open problem makes
+certain long-distance quantum communication tasks, such as repeated
+entanglement connection, difficult to accomplish using a driven Raman process.
 
 Unrelated to the question of memories is formalizing the architectural analysis
 of loss-modeling beam splitters. The $\textrm{SU}\pna{2}$ number-state
@@ -1454,7 +1395,7 @@ limit ourselves to linear optical elements (e.g., 50-50 and polarizing beam
 splitters, loss elements), photodetectors, and photon-number conserving
 nonlinear optical elements (e.g., heralding quantum memories or Kerr crystals)?
 In particular, do any of the properties of a beam splitter coefficient
-introduced in Chapter~\ref{chap:herald} permit any useful, analytical
+introduced in Section~\ref{chap:herald} permit any useful, analytical
 simplifications when using the joint density operator of a network to calculate
 a figure of merit? Is a number-state analysis consistent with a SPDC Gaussian
 state analysis when nonlinear elements are excluded and we are limited entirely

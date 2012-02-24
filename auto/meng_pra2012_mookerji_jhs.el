@@ -12,6 +12,7 @@
      "fig:ours"
      "eq:trilinear"
      "eq:tri_h_total"
+     "eqn:final_tri_ham"
      "sec:intro:entanglement"
      "eq:final_singlet"
      "fig:chap1:connection"
