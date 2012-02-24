@@ -618,18 +618,16 @@ communications of quantum states over long distances.
 
 
 % Theory Results
-
 \section{Heralded Polarization Entanglement Distribution with Atomic
   Ensembles\label{chap:herald}}
 
-This chapter combines the operating principles of ensemble-based quantum
-memories, as described in Section~\ref{chap:atomic}, with architectures for
-polarization entanglement distribution, entanglement connection, and quantum
-teleportation. We will first discuss our architecture for entanglement
-distribution and provide a very basic abstraction for quantum memories. The
-remainder characterizes figures of merit---fidelity, heralding probability, and
-protocol success probability---under various transmission loss and
-photodetection conditions.
+This section combines the operating principles of ensemble-based quantum
+memories with architectures for polarization entanglement distribution,
+entanglement connection, and quantum teleportation. We will first discuss our
+architecture for entanglement distribution and provide a very basic abstraction
+for quantum memories. The remainder characterizes figures of merit---fidelity,
+heralding probability, and protocol success probability---under various
+transmission loss and photodetection conditions.
 
 \subsection{Architecture Overview and Figures of Merit\label{sec:herald:overview}}
 
@@ -715,6 +713,8 @@ protocol for heralded polarization entanglement distribution therefore requires
 the occurrence of a single detection on either photodetectors $D_1$ or $D_2$,
 as well as a \emph{corresponding event} on either $D_4$ or $D_3$. In the
 following, successful heralding is given by the projective measurements
+
+\begin{widetext}
 \begin{align}
     \hat{M}_j^{\textrm{PNRD}} = \left\{
 	\begin{array}{lr}
@@ -725,6 +725,7 @@ following, successful heralding is given by the projective measurements
 	\end{array}
 	\right.,
 \end{align}
+
 
 \begin{align}
     \hat{M}_j^{\textrm{NRPD}} = \left\{
@@ -737,6 +738,7 @@ following, successful heralding is given by the projective measurements
 	\right.,
 	\label{eq:chap3:meas_povm}
 \end{align}
+\end{widetext}
 where $\ket{n}_i$ ($n=0,1$) are the vacuum and single-photon states, and
 $\hat{I}_i$ is the identity operator for the $\hat{a}_i$ mode measured at
 photodetector $D_i$ ($i=1,2,3,4$).
@@ -747,9 +749,13 @@ click. The success probability $P_{\textrm{success}}$ is the probability that
 heralding has occurred and the four ensembles have loaded a polarization Bell
 state. The fidelity $F_j$ is the projection of the post-heralding ensemble
 state onto the appropriate Bell state for $\hat{M}_j$ heralding, i.e.,
-\eqn{
-\ket{\psi_j} = \frac{1}{\sqrt{2}}\pna{\ket{1}_S^1\ket{0}_S^2\ket{0}_S^3\ket{1}_S^4+\pna{-1}^j \ket{0}_S^1\ket{1}_S^2\ket{1}_S^3\ket{0}_S^4} \qquad \pna{j=1,2,3,4}.\label{eqn:remaining_singlet}
-}
+\begin{align}
+\ket{\psi_j} & 
+=
+\frac{1}{\sqrt{2}}\pna{\ket{1}_S^1\ket{0}_S^2\ket{0}_S^3\ket{1}_S^4+\pna{-1}^j
+  \ket{0}_S^1\ket{1}_S^2\ket{1}_S^3\ket{0}_S^4} \nonumber \\ & \qquad \qquad
+\qquad \qquad \pna{j=1,2,3,4}.\label{eqn:remaining_singlet}
+\end{align}
 Following a photodetection measurement, the joint density operator of the four
 atomic ensembles is determined by applying $\hat{M}_j$ and tracing over the
 optical modes:
@@ -802,15 +808,18 @@ beam splitter operator,
 where the $\{\hat{L}_i\}$ are the Schwinger angular momentum operators for a
 two-dimensional quantum harmonic oscillator:
 \eqn{
-\hat{L}_1 = \frac{1}{2}\pna{\hat{a}_1^{\dagger}\hat{a}_2+\hat{a}^{\dagger}_2\hat{a}_1} \quad 
-\hat{L}_2 = \frac{1}{2i}\pna{\hat{a}_1^{\dagger}\hat{a}_2-\hat{a}^{\dagger}_2\hat{a}_1}\quad 
+\hat{L}_1 = \frac{1}{2}\pna{\hat{a}_1^{\dagger}\hat{a}_2+\hat{a}^{\dagger}_2\hat{a}_1} \qquad 
+\hat{L}_2 =
+\frac{1}{2i}\pna{\hat{a}_1^{\dagger}\hat{a}_2-\hat{a}^{\dagger}_2\hat{a}_1}
+\nonumber }
+\eqn{
 \hat{L}_3 = \frac{1}{2}\pna{\hat{a}_1^{\dagger}\hat{a}_1+\hat{a}^{\dagger}_2\hat{a}_2}.
 }
 Given a joint input state---either a pure state $\ket{\psi}_{\textrm{in}}$, or
 a pure or mixed state $\hat{\rho}_{\textrm{in}}$---of the signal and auxiliary
 inputs, the output state of the beam splitter is
 \eqn{
-\ket{\psi_{\textrm{out}}}=\hat{B}^{\dagger}\pna{\eta,\phi_t,\phi_r}\ket{\psi_{\textrm{in}}}, \qquad 
+%\ket{\psi_{\textrm{out}}}=\hat{B}^{\dagger}\pna{\eta,\phi_t,\phi_r}\ket{\psi_{\textrm{in}}}, \qquad 
 \hat{\rho}_{\textrm{out}}=\hat{B}^{\dagger}\pna{\eta,\phi_t,\phi_r}\hat{\rho}_{\textrm{in}}\hat{B}\pna{\eta,\phi_t,\phi_r}.\label{eq:beamsplitter_trans}}
 
 In the number-state representation, as shown in
@@ -821,34 +830,41 @@ input state
 \rho_{\textrm{in}}\pna{n_1,n_2;n_1',n_2'}\ket{n_1,n_2}\bra{n_1',n_2'} \label{eqn:chap3_rho_input}
 }
 is,
-\eqn{
-\hat{\rho}_{\textrm{out}}=\sum_{N_1,N_2=0}^{\infty}\sum_{N_1',N_2'=0}^{\infty}
-\rho_{\textrm{out}}\pna{N_1,N_2;N_1',N_2'}\ket{N_1,N_2}\bra{N_1',N_2'},\label{eqn:chap3_rho_output}.
-}
+\begin{align}
+\hat{\rho}_{\textrm{out}} & =\sum_{N_1,N_2=0}^{\infty}\sum_{N_1',N_2'=0}^{\infty}
+\rho_{\textrm{out}}\pna{N_1,N_2;N_1',N_2'} \nonumber \\ & \hspace{1.5in} \cdot\ket{N_1,N_2}\bra{N_1',N_2'},\label{eqn:chap3_rho_output}.
+\end{align}
 The output state (Eqn.~\ref{eqn:chap3_rho_output}) follows from the input state
 (Eqn.~\ref{eqn:chap3_rho_input}) by first applying the unitary beam splitter
 transformation in Eqn.~\ref{eq:bs_operator_def}, and then inserting the
 identity operator in the $\ket{N_1,N_2}$ basis. The output matrix elements in
 Eqn.~\ref{eqn:chap3_rho_output} are
-\eqn{\rho_{\textrm{out}}\pna{N_1,N_2;N_1',N_2'}=\sum_{n_1,n_2=0}\sum_{n_1',n_2'=0} B_{N_1,N_2}^{n_1,n_2}\pna{\eta,\phi_t,\phi_r}\pnb{B_{N_1',N_2'}^{n_1',n_2'}\pna{\eta,\phi_t,\phi_r}}^{*}\rho_{\textrm{in}}\pna{n_1,n_2;n_1',n_2'},\label{eq:rho_output}
-}
+\begin{align}
+& \rho_{\textrm{out}}\pna{N_1,N_2;N_1',N_2'} \nonumber \\ & \qquad
+=\sum_{n_1,n_2=0}\sum_{n_1',n_2'=0}
+B_{N_1,N_2}^{n_1,n_2}\pna{\cdot}\pnb{B_{N_1',N_2'}^{n_1',n_2'}\pna{\cdot}}^{*}
+\nonumber \\ & \hspace{1.5in}\cdot\rho_{\textrm{in}}\pna{n_1,n_2;n_1',n_2'},\label{eq:rho_output}
+\end{align}
 where
 \begin{align}
 B_{N_1,N_2}^{n_1,n_2}\pna{\eta,\phi_t,\phi_r} &= \bra{N_1,N_2}\hat{B}^{\dagger}\pna{\eta,\phi_t,\phi_r}\ket{n_1,n_2}\nonumber \\
 & =R_{N_1,N_2}^{n_1,n_2}\pna{\eta} e^{i{\phi_t\pna{N_1-n_2}+\phi_r\pna{N_1-n_1}}}.
 \end{align}
-The transformation coefficients,
-\eqn{
-R_{N_1,N_2}^{n_1,n_2}\pna{\eta}=\abs{B_{N_1,N_2}^{n_1,n_2}\pna{\eta,\phi_t,\phi_r}}=\bra{N_1,N_2}e^{-2i\cos^{-1}\pna{\sqrt{\eta}}\hat{L}_2}\ket{n_1,n_2},
-}
-can be calculated in terms of the Jacobi polynomials $P_n^{\pna{\alpha,\beta}}\pna{x}$ as
+The transformation amplitudes $R$ can be calculated in terms of the Jacobi
+polynomials $P_n^{\pna{\alpha,\beta}}\pna{x}$ as
+%\eqn{
+%R_{N_1,N_2}^{n_1,n_2}\pna{\eta}=\bra{N_1,N_2}e^{-2i\cos^{-1}\pna{\sqrt{\eta}}\hat{L}_2}\ket{n_1,n_2},
+% =\abs{B_{N_1,N_2}^{n_1,n_2}\pna{\eta,\phi_t,\phi_r}}
+%}
 \begin{align}
-	R_{N_1,N_2}^{n_1,n_2}\pna{\eta}=\sqrt{\frac{N_1!N_2!}{n_1!n_2!} \eta^{N_1-n_2}\pna{1-\eta}^{N_1-n_1}}P_{N_2}^{\pna{N_1-n_1,N_1-n_2}}\pna{2\eta-1}, \qquad N_1\geq n_1,n_2,  \label{eqn:coefficient_value}
+	R_{N_1,N_2}^{n_1,n_2}\pna{\eta}& =\sqrt{\frac{N_1!N_2!}{n_1!n_2!}
+          \eta^{N_1-n_2}\pna{1-\eta}^{N_1-n_1}} \nonumber \\ & \qquad \cdot P_{N_2}^{\pna{N_1-n_1,N_1-n_2}}\pna{2\eta-1},~N_1\geq n_1,n_2,  \label{eqn:coefficient_value}
 \end{align}
 where
 \begin{align}
-P_n^{\pna{\alpha,\beta}}\pna{x} = \frac{\pna{-1}^n}{2^n n!}\pna{1-x}^{-\alpha}\pna{1+x}^{-\beta}\pna{\frac{d}{dx}}^n\pnb{\pna{1-x}^{n+\alpha}\pna{1+x}^{n+\beta}},\nonumber \\
-\alpha,\beta >-1, \quad -1\leq x \leq 1.
+P_n^{\pna{\alpha,\beta}}\pna{x} & = \frac{\pna{-1}^n}{2^n
+  n!}\pna{1-x}^{-\alpha}\pna{1+x}^{-\beta}\nonumber \\ & \qquad \cdot\pna{\frac{d}{dx}}^n\pnb{\pna{1-x}^{n+\alpha}\pna{1+x}^{n+\beta}},\nonumber \\
+& \hspace{1.0in} \alpha,\beta >-1,~-1\leq x \leq 1.
 \end{align}
 The restriction $N_1\geq n_1, n_2$ ensures the orthogonality of the Jacobi
 polynomials in Eqn.~\ref{eqn:coefficient_value} over the range of quantum
@@ -856,15 +872,18 @@ efficiency $0\leq \eta \leq 1$; we will extend the range of this coefficient
 shortly. The $R$ coefficient characterizes the output photon-number probability
 distribution for the joint input state $\ket{n_1,n_2}$. For a number-diagonal
 joint input state, it can be shown that
-\eqn{
-    P_{\textrm{out}}\pna{N_1, N_2} = \bra{N_1, N_2} \hat{\rho}_{\textrm{out}}\ket{N_1, N_2}
-    = \sum_{\substack{n_1=0\\n_2=N_1+N_2-n_1}}^{N_1+N_2}P_{\textrm{out}}\pna{N_1, N_2|n_1, n_2} P_{\textrm{in}}\pna{n_1, n_2},}
+\begin{align}
+    & P_{\textrm{out}}\pna{N_1, N_2}  \nonumber \\ 
+    & \qquad = \bra{N_1, N_2} \hat{\rho}_{\textrm{out}}\ket{N_1, N_2} \nonumber \\
+    & \qquad = \sum_{\substack{n_1=0\\n_2=N_1+N_2-n_1}}^{N_1+N_2}P_{\textrm{out}}\pna{N_1,
+      N_2|n_1, n_2} P_{\textrm{in}}\pna{n_1, n_2},
+\end{align}
 where the conditional and joint probabilities are 
-\eqn{
-P_{\textrm{out}}\pna{N_1, N_2|n_1, n_2} = \pnb{R_{N_1,N_2}^{n_1,n_2}\pna{\eta}}^2
-\quad \textrm{and} \quad 
-P_{\textrm{in}}\pna{n_1, n_2} = \rho_{\textrm{in}}\pna{n_1,n_2;n_1,n_2},
-} respectively.
+\begin{align}
+P_{\textrm{out}}\pna{N_1, N_2|n_1, n_2} & =
+\pnb{R_{N_1,N_2}^{n_1,n_2}\pna{\eta}}^2 \nonumber \\
+P_{\textrm{in}}\pna{n_1, n_2} & = \rho_{\textrm{in}}\pna{n_1,n_2;n_1,n_2},
+\end{align} respectively.
 
 The beam splitter's physical symmetries allow us to extend the Jacobi
 polynomials over the full range photon-number output probabilities:
@@ -887,6 +906,394 @@ and third summation there to $n_1\in\{0,1,\ldots,N_1+N_2\}$ and
 $n_1'\in\{0,1,\ldots,N_1'+N_2'\}$, respectively.
 
 
+\subsection{Calculation Examples --- Lossless Case\label{sec:example:first}}
+
+Accounting for each linear loss and interference element described in
+Figures~\ref{fig:channel_model} and~\ref{fig:channel_loss_model}, we calculate
+the singlet-distribution fidelity and the protocol's probability of success by
+applying compositions of the beam splitter transformation described in
+Eqn.~\ref{eq:beamsplitter_trans} to the Gaussian input state whose low-flux
+approximations becomes the singlet state in
+Eqn.~\ref{eq:final_singlet}. Together, Eqns.~\ref{eq:rho_output}
+and~\ref{eqn:coefficient_value} abstract the the beam splitter's action, in the
+number-state basis, into a numerical calculation. Before analyzing the full
+architecture with all losses, we'll discuss two simpler calculations---lossless
+distribution and distribution with pre-transmission and photodetection
+losses---that form the repertoire of techniques necessary for analysis of the
+general problems of interest. 
+
+Is the preceding mathematical formalism consistent with our expectations for
+lossless entanglement distribution? We assume that the input field phase shifts
+($\phi_t,\phi_r$) are identically zero. Each of the four orthogonal signal and
+idler modes experience linear loss independently. Therefore, to avoid
+redundancy in the notation, we write the Gaussian state in
+Eqn.~\ref{eq:final_singlet}, at all orders, as 
+\eqn{
+\ket{\psi}_{\textrm{in}}=\sum_{n,m=0}^{\infty} \pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}}\ket{n}_{S_y}\ket{m}_{S_x}\ket{m}_{I_y}\ket{n}_{I_x} 
+ \rightarrow \sum_{n,m=0}^{\infty} f_{n,m}\pna{\bar{N}}\ket{n_i}^i,
+}
+where $f_{n,m}\pna{\bar{N}}$ abstracts the thermal statistics of the OPAs. Any
+state or term having a variable indexed by $i~\pna{i=1,2,3,4}$ actually denotes
+a product of four terms acting at separately on those photodetection branches,
+similar to Einstein index notation, so that $\ket{n_i}^i\equiv
+\ket{n}_{S_y}\ket{m}_{S_x}\ket{m}_{I_y}\ket{n}_{I_x}$ and any usage of the
+$n_i$ will have a implicit dependence on $n$ and $m$. The complete conversion
+of a pump field by a quantum memory is then given by
+$\ket{N^a_i}_a^i\ket{0}_b^i\ket{0}_S^i\rightarrow\ket{0}_a^i\ket{N^a_i}_b^i\ket{N^a_i}_S^i$,
+where $a$, $b$, and $S$ denote the pump, heralding, and spin excitation modes,
+respectively. All photons impinging on the ensembles that form the memory are
+converted into heralding photons and spin excitations. The resulting state of
+the heralding photons and the spin excitations in therefore
+\begin{align}
+\ket{\psi}_{\textrm{post-ensemble}}& = \sum_{n,m} \pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}} 
+\ket{n}^1_b \ket{m}^2_b \ket{m}^3_b \ket{n}^4_b 
+\ket{n}^1_S \ket{m}^2_S \ket{m}^3_S \ket{n}^4_S  \nonumber  \\
+& \rightarrow \sum_{n,m}f_{n,m}\pna{\bar{N}}\ket{n_i}^i_b\ket{n_i}^i_S.
+\end{align}
+Following interference of the heralding photons at the beam splitters in
+Fig.~\ref{fig:channel_model}, the joint state of the ensembles and the
+heralding photons at the photodetectors is
+\eqn{
+\ket{\psi}_{\textrm{out}} =\sum_{N_i^p}\sum_{n,m} \underbrace{f_{n,m}\pna{\bar{N}}}_\text{SPDC} \underbrace{B_{N_2^p,N_1^p}^{n,m}\pna{\frac{1}{2}}  
+B_{N_4^p,N_3^p}^{m,n}\pna{\frac{1}{2}}}_\text{Interference Amplitude}\ket{N_i^p}^i_p\ket{n_i}^i_S, \label{eq:chap3:lossless_output}
+}
+where we have suppressed the phase arguments in the beam splitter coefficients
+because $\phi_t=\phi_r=0$. In Eqn.~\ref{eq:chap3:lossless_output}, the
+interference amplitude terms correspond to the mixing of $m$ and $n$ photons at
+both the signal and idler subsystems in Fig.~\ref{fig:channel_model}, yielding
+$N^p_i$ photons photons at the photodetector $D_i$. The joint output written as
+a pure-state density operator is thus
+\begin{align}
+\hat{\rho}_{\textrm{out}} =\ket{\psi}_{\textrm{out}} \bra{\psi}_{\textrm{out}} & =\sum_{N_i^p, N_i^{p\prime}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{N_2^p,N_1^p}^{n,m}\pna{\frac{1}{2}}  
+B_{N_4^p,N_3^p}^{m,n}\pna{\frac{1}{2}} \nonumber \\
+& \qquad\qquad\qquad\cdot  \pnb{B_{N_2^{p\prime},N_1^{p\prime}}^{n',m'}\pna{\frac{1}{2}}  
+B_{N_4^{p\prime},N_3^{p\prime}}^{m',n'}\pna{\frac{1}{2}}}^*\ket{N_i^{p}}^i_p\ket{n_i}^i_S\bra{N_i^{p\prime}}^i_{p\prime}\bra{n_i^{\prime}}^i_S .\label{eqn:joint_state_lossless}
+\end{align}
+Following the definition of heralding probability in
+Eqn.~\ref{eqn:herald_prob}, we trace over all modes and find that photon number
+resolving detectors yield
+\eqn{
+	P_{1}^{\textrm{herald}}=\textrm{tr}\pna{\hat{\rho}_{\textrm{out}} \hat{M}_{1}} = \sum_{n,m} \abs{f_{n,m}\pna{\bar{N}} 
+		B_{0,1}^{n,m}\pna{\frac{1}{2}} B_{1,0}^{m,n}\pna{\frac{1}{2}}}^2 =\frac{\bar{N}}{2\pna{1+\bar{N}}^3},\label{eq:chap3:lossless_prob}
+}
+where the last equality is calculated by summation expansion. Following
+projective measurement, the joint state of the ensembles is given by the
+mixed-state density operator,
+\begin{align}
+\hat{\rho}_{\textrm{post}}^{1} & = \frac{1}{P_{1}^{\textrm{herald}}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{0,1}^{n,m}\pna{\frac{1}{2}}  
+B_{1,0}^{m,n}\pna{\frac{1}{2}} \nonumber \\
+& \qquad\qquad\qquad\qquad \cdot \pnb{B_{0,1}^{n',m'}\pna{\frac{1}{2}}  
+B_{1,0}^{m',n'}\pna{\frac{1}{2}}}^*\ket{n_i}^i_S\bra{n_i^{\prime}}^i_S,\label{eqn:post:lossless}
+\end{align}
+which, projected against the ideal singlet state $\ket{\psi_{1}}$ gives the
+fidelity of the entanglement distribution
+\begin{align}
+	F_{1}&=\bra{\psi_{1}}\hat{\rho}_{\textrm{post}}^{1} \ket{\psi_{1}} \nonumber \\
+		& = \frac{1}{2P_{1}^{\textrm{herald}}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{0,1}^{n,m}\pna{\frac{1}{2}}  
+		B_{1,0}^{m,n}\pna{\frac{1}{2}}\nonumber \\ 
+		& \qquad \qquad \qquad \cdot \pnb{B_{0,1}^{n',m'}\pna{\frac{1}{2}} B_{1,0}^{m',n'}\pna{\frac{1}{2}}}^*\pna{\delta_{n,1}\delta_{m,0}-\delta_{n,0}\delta_{m,1}}\pna{\delta_{n',1}\delta_{m',0}-\delta_{n',0}\delta_{m',1}} \nonumber \\
+		& = \frac{\bar{N}}{2P_{1}^{\textrm{herald}}\pna{1+\bar{N}}^3}=1,
+\end{align}
+Here, the second and third terms from expanding the Kronecker delta expression
+cancel, and the last equality follows from
+Eqn.~\ref{eq:chap3:lossless_prob}. Unity fidelity is the expected result in
+this ideal, lossless case. Because the post-measurement state is symmetric with
+respect to all $\hat{M}_j$, the protocol's overall success
+probability---defined by Eqn.~\ref{eq:success_prob_def}---is four times the
+value we found in Eqn.~\ref{eq:chap3:lossless_prob},
+\eqn{
+P_{\textrm{success}}= \frac{2\bar{N}}{\pna{1+\bar{N}}^3},
+}
+which equals the probability of successful generation of a single pair of
+signal and idler photons from a dual OPA source. Again, this is an expected
+result for the ideal case of lossless operation. 
+
+The non-resolving photodetection calculations are a bit more complicated, and
+there we use the identity
+\eqn{
+\textrm{tr}\pnb{\ket{n}\bra{n'}\pna{I-\ket{0}\bra{0}}}=1-\delta_{n,0}\delta_{n',0}
+}
+and the prior definition of a NRPD POVM measurement given in
+Eqn.~\ref{eq:chap3:meas_povm}. Applied to the joint state density operator in
+Eqn.~\ref{eqn:joint_state_lossless}, the post-measurement state of the
+ensembles is
+\begin{align}
+\hat{\rho}_{\textrm{post}}^{1}& =\sum_{N_i^p, N_i^{p\prime}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{0,N_1^p}^{n,m}\pna{\frac{1}{2}}  
+B_{N_4^p,0}^{m,n}\pna{\frac{1}{2}}\pnb{B_{0,N_1^{p\prime}}^{n',m'}\pna{\frac{1}{2}}  
+B_{N_4^{p\prime},0}^{m',n'}\pna{\frac{1}{2}}}^* \nonumber \\
+& \qquad\qquad\qquad\cdot  \pna{1-\delta_{0,N_1^{p}}\delta_{0,N_1^{p\prime}} - \delta_{0,N_4^{p}}\delta_{0,N_4^{p\prime}} + \delta_{0,N_1^{p}}\delta_{0,N_1^{p\prime}} \delta_{0,N_4^{p}}\delta_{0,N_4^{p\prime}}}\ket{n_i}^i_S\bra{n_i^{\prime}}^i_S \nonumber \\
+& = \sum_{n,m} \abs{f_{n,m\pna{\bar{N}}} B_{0,n+m}^{n,m}\pna{\frac{1}{2}} B_{n+m,0}^{m,n}\pna{\frac{1}{2} }}^2 \ket{n_i}^i_S\bra{n_i}^i_S
+\end{align}
+In the last step's simplification, we have enforced the photon number
+conservation constraint implicit in the definition of the beam splitter
+coefficient. For the sake of brevity, the details of the corresponding
+fidelity, heralding probability, and success probability calculations are
+omitted, being straightforward extensions of PNRD
+calculation. Fig.~\ref{fig:chap3:nrpd_lossless} shows the combined results of
+the PNRD and NRPD calculations.
+
+\begin{figure}[t]
+\centering
+\subfigure{
+\includegraphics[width=0.47\textwidth]{figures/nrpd_lossless_herald.pdf}
+\label{fig:chap3:nrpd_lossless_heralding_prob}
+}
+\subfigure{
+\includegraphics[width=0.47\textwidth]{figures/nrpd_lossless_fid.pdf}
+\label{fig:chap3:nrpd_lossless_fidelity}
+}
+\subfigure{
+\includegraphics[width=0.47\textwidth]{figures/nrpd_lossless_success.pdf}
+\label{fig:chap3:nrpd_lossless_success}
+}
+
+\caption{\label{fig:chap3:nrpd_lossless}Figures of merit for lossless architecture (PNRD and NRPD). Figures~\ref{fig:chap3:nrpd_lossless_heralding_prob} and~\ref{fig:chap3:nrpd_lossless_fidelity} show divergences between heralding probability and fidelity for PNRD (gray) and NRPD (black) architectures. The protocol's overall success probability is identical in either case (Fig.~\ref{fig:chap3:nrpd_lossless_success}).}
+\end{figure}
+
+Despite the absence of losses in this example, we can still gain some intuition
+for the effects of different photodetection schemes on our figures of
+merit. Fig.~\ref{fig:chap3:nrpd_lossless} compares the resulting figures of
+merit between the PNRD and NRPD photodetection schemes in a lossless
+architecture in which increasing $\bar{N}$ leads to an increasing likelihood of
+multi-pair emissions from the entanglement source. The heralding probability
+for the NRPD exceeds that for PNRD, which is not surprising, as PNRD forms a
+subset of the possible detection events present with the NRPD scheme. In the
+absence of loss, the NRPD fidelity is independent of detection events at either
+$D_{1}/D_{4}$ or $D_{2}/D_{3}$ and falls dramatically for high values of
+$\bar{N}$, being ultimately unable to distinguish between valid single-photon
+heralding events and higher-order excitations stored in the ensemble. The PNRD
+fidelity, on the other hand, holds at unity, because this detector perfectly
+identifies single-pair loading in the lossless scenario under consideration
+here. The success probability, however, is identical for the PNRD and NRPD
+schemes, because any decline in NRPD fidelity is compensated for by a
+corresponding increase in heralding probability. A single term in the success
+probability sum---the product of the fidelity and heralding
+probability---represents the joint probability of loading the required Bell
+state and the measurement of the corresponding heralding event. Single photon
+events do not require photon-number resolving capabilities, and as such, the
+loading success is equally likely under either scheme, when the system is
+lossless.
+
+\subsection{Calculation Examples --- Pre-Transmission and Photodetection
+  Losses\label{sec:example:two}}
+
+Including loss in our analysis introduces nested binomial distributions of pump
+and signal photons, and the added computational complexity of deeper and deeper
+nested summations. As such, the results of this example and all subsequent
+sections are calculated numerically, with a range of $\bar{N}$ chosen so that
+the input Gaussian state can be safely truncated to a finite number of
+excitations. For all subsequent calculations in this thesis, $\bar{N}$ ranges
+from 0.05 to 0.3 in steps of $\Delta \bar{N}=0.05$, and we take
+$n_{\textrm{max}}=m_{\textrm{max}}=3$ to be the maximum number of
+excitations. For the the full range of a single transmission efficiency $ 0
+\leq \eta \leq 1$, it can be shown (numerically) that figures of merit, such as
+heralding probability, with higher truncation values differ insignificantly
+from those calculated at $n_{\textrm{max}}=m_{\textrm{max}}=3$. 
+
+Introducing auxiliary vacuum states indexed by $N^{\textrm{pre}}$ and
+$N^{\textrm{pho}}$, the joint output state of the heralded photons, ensemble
+excitations, and noise modes is given by,
+\begin{align}
+	\ket{\psi}_{\textrm{out}} &=\sum_{N_i^a,N_i^{\textrm{pre}},N_i,N_i^{\textrm{pho}}}
+	\sum_{n,m} 
+	f_{n,m}\pna{\bar{N}}
+	B_{N_i^a,N_i^{\textrm{pre}}}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}  
+	B_{N_2,N_1}^{N_1^a,N_2^a}\pna{\frac{1}{2}}  
+	B_{N_4,N_3}^{N_3^a,N_4^a}\pna{\frac{1}{2}}\nonumber \\
+	& \qquad \qquad \qquad \qquad \qquad
+	\cdot B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}}  
+	\ket{N_i^p}^i_p
+	\ket{N_i^a}^i_S 
+	\ket{N_i^{\textrm{pre}}}^i_{\textrm{pre}}
+	\ket{N_i^{\textrm{pho}}}^i_{\textrm{pho}}. \label{eq:chap3:full_state}
+\end{align}
+Eqn.~\ref{eq:chap3:full_state} contains several important features. First,
+recall that each term indexed by $i$ actually represents four independent
+terms. The $n_i$ photons from the SPDC source mix with vacuum (zero photons),
+converting into $N^a_i$ pump photons for the quantum memory and
+$N_i^{\textrm{pre}}$ noise photons. The pump photons are completely converted
+into $N^a_i$ heralding photons and $N^a_i$ spin excitations. At the 50-50 beam
+splitter, the $\pna{N^a_1,N^a_2}$ and $\pna{N^a_3,N^a_4}$ photons interfere,
+yielding $\pna{N_1,N_2}$ and $\pna{N_3,N_4}$ photons which are each mixed with
+vacuum to yield $N^p_i$ photons at each $D_i$ photodetector. The summation
+lower limit for each summation variable is 0, and upper limit is given by the
+sum of the inputs to a given beam splitter (e.g., $n_i$ for each the $N^a_i$
+and $N_i^{\textrm{pre}}$ summations, $N^a_1+N^a_2$ for each of the $N_1$ and
+$N_2$ summations). Tracing out the noise modes and and applying photon-number
+conservation to eliminate nested summations, the PNRD heralding probability for
+single-photon counts at detectors $D_1$ and $D_4$ is given by
+\begin{align}
+	P_{1}^{\textrm{PNRD}}&=\sum_{N_i^a,N_i}\sum_{n,m}
+	\left| f_{n,m}\pna{\bar{N}}
+	B_{N_i^a,n_i-N_i^a}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}
+	B_{N_2,N_1}^{N_1^a,N_2^a}\pna{\frac{1}{2}}  
+	B_{N_4,N_3}^{N_3^a,N_4^a}\pna{\frac{1}{2}} \right. \nonumber \\
+	& \qquad \qquad \qquad\left.~\cdot B_{1,N_1-1}^{N_1,0}\pna{\eta_1^{\textrm{pho}}} 
+	B_{0,N_2}^{N_2,0}\pna{\eta_2^{\textrm{pho}}} 
+	B_{0,N_3}^{N_3,0}\pna{\eta_3^{\textrm{pho}}} 
+	B_{1,N_4-1}^{N_4,0}\pna{\eta_4^{\textrm{pho}}} \right|^2. 
+\end{align}
+From Eqn.~\ref{eqn:coefficient_value}, the photon-number probability amplitude
+following the OPA coefficient corresponds to the familiar binomial probability
+distribution that results from mixing of a number state with vacuum. Applying
+the NRPD POVM and photon-number conservation, as in
+Eqn.~\ref{eqn:post:lossless}, and factoring the remaining photodetection
+efficiency amplitudes gives the heralding probability:
+\begin{align}
+	&P_{1}^{\textrm{NRPD}}= \nonumber \\
+	& \sum_{N_i^a,N_i}\sum_{n,m}
+	\left|f_{n,m}\pna{\bar{N}}
+	B_{N_i^a,n_i-N_i^a}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}
+	B_{N_2,N_1}^{N_1^a,N_2^a}\pna{\frac{1}{2}}
+	B_{N_4,N_3}^{N_3^a,N_4^a}\pna{\frac{1}{2}} 
+	B_{0,N_2}^{N_2,0}\pna{\eta_2^{\textrm{pho}}} 
+	B_{0,N_3}^{N_3,0}\pna{\eta_3^{\textrm{pho}}}\right|^2\nonumber \\
+	&  \pnb{\abs{B_{0,N_1}^{N_1,0}\pna{\eta_1^{\textrm{pho}}}}^2-\sum_{N_1^p=0}^{N_1} \abs{B_{N_1^p,N_1-N_1^p}^{N_1,0}\pna{\eta_1^{\textrm{pho}}}}^2} \pnb{\abs{B_{0,N_4}^{N_4,0}\pna{\eta_4^{\textrm{pho}}}}^2-\sum_{N_4^p=0}^{N_4} \abs{B_{N_4^p,N_4-N_4^p}^{N_4,0}\pna{\eta_4^{\textrm{pho}}}}^2}.
+\end{align}
+The terms of this summation are also the diagonal coefficients of the
+ensembles' post-measurement density operator, which is required for calculating
+the fidelity and overall success probability of the protocol. To avoid
+redundancy, the numerical calculations of these quantities and their
+interpretation is described in Section~\ref{sec:numerics}. 
+
+\subsection{Full Loss Calculation (PNRD and NRPD)~\label{sec:numerics}}
+
+In the previous section, we previewed a set of techniques used in the analysis
+of entanglement distribution, which we now use to account for all losses. In
+the following, we assume that the input field phase shifts ($\phi_t,\phi_r$) of
+each loss-modeling beam splitter are identically 0. As in the previous
+sections, we only list expressions for matching photodetection events at $D_1$
+and $D_4$, as corresponding expressions for $D_2$ and $D_3$ are found by simple
+substitution. Accounting for all losses, the full output state of the
+architecture, as shown in Fig.~\ref{fig:channel_loss_model}, is given by,
+\begin{align}
+\ket{\psi}_{\textrm{out}} & = \sum_{n,m} f_{n,m}\pna{\bar{N}} \nonumber \\
+& \hspace{-5mm}\cdot
+\sum_{\substack{N_i^a,N_i^{\textrm{pre}},N_i^l,N_i^{\textrm{post}},\\ N_i,N_i^p,N_i^{\textrm{pho}} }}
+\pnb{\underbrace{B_{N_i^a,N_i^{\textrm{pre}}}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}  
+B_{N_i^l,N_i^{\textrm{post}}}^{N_i^a,0}\pna{\eta_i^{\textrm{post}}}}_\text{Pre-Interference Loss}
+\underbrace{B_{N_2,N_1}^{N_1^l,N_2^l}\pna{\frac{1}{2}} B_{N_4,N_3}^{N_3^l,N_4^l}\pna{\frac{1}{2}}}_\text{Interference Terms}
+\underbrace{B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}}}_\text{Photodetection Loss}}   \nonumber \\
+& \qquad \quad \cdot \underbrace{\ket{N_i^p}_{p}^i \ket{N_i^a}_{S}^i}_\text{Heralded \& Ensemble Modes} \underbrace{\ket{N_i^{\textrm{pho}}}_{\textrm{pho}}^i \ket{N_i^{\textrm{post}}}_{\textrm{post}}^i \ket{N_i^{\textrm{pre}}}_{\textrm{pre}}^i}_\text{Auxiliary Noise Modes}. 
+\end{align}
+and the corresponding joint density operator of the heralded photon and
+ensemble modes is 
+\begin{align}
+	\hat{\rho}_{\textrm{out}}^{p,S} & = \sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}} f_{n',m'}\pna{\bar{N}} \nonumber \\
+	& \qquad \cdot\sum_{\substack{N_i^a,N_i^{\textrm{pre}}\\ N_i^{a\prime} }} \sum_{\substack{N_i^l,N_i^{\textrm{post}}\\ N_i^{l\prime} }}
+	B_{N_i^a,N_i^{\textrm{pre}}}^{n_i,0}\pna{\eta_i^{\textrm{pre}}} B_{N_i^l,N_i^{\textrm{post}}}^{N_i^a,0}\pna{\eta_i^{\textrm{post}}} \pnb{B_{N_i^{a\prime},N_i^{\textrm{pre}}}^{n_i',0}\pna{\eta_i^{\textrm{pre}}} B_{N_i^{l\prime},N_i^{\textrm{post}}}^{N_i^{a\prime},0}\pna{\eta_i^{\textrm{post}}}}^{*} \nonumber \\
+	& \qquad \cdot \sum_{\substack{N_1,N_2,N_3,N_4\\ N_1',N_2',N_3',N_4'}}
+	 B_{N_2,N_1}^{N_1^l,N_2^l}\pna{\frac{1}{2}} B_{N_4,N_3}^{N_3^l,N_4^l}\pna{\frac{1}{2}} \pnb{B_{N_2',N_1'}^{N_1^{l\prime},N_2^{l\prime}}\pna{\frac{1}{2}} B_{N_4',N_3'}^{N_3^{l\prime},N_4^{l\prime}}\pna{\frac{1}{2}}}^{*}\nonumber \\
+	& \qquad \cdot \sum_{\substack{N_i^p,N_i^{\textrm{pho}}\\ N_i^{p\prime} }}
+	 B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}} \pnb{B_{N_i^{p\prime},N_i^{\textrm{pho}}}^{N_i',0}\pna{\eta_i^{\textrm{pho}}}}^{*} \ket{N_i^p}_{p}^i \ket{N_i^a}_{S}^i \bra{N_i^{p\prime}}_{p}^i \bra{N_i^{a\prime}}_{S}^i,
+\end{align}
+and the PNRD probability that a heralding event $\hat{M}_{1}$ has occurred is then
+\begin{align}
+	P_{1}& =\textrm{tr}\pna{\hat{\rho}_{\textrm{out}}^{p,S} M_{1}}\nonumber \\
+	& = \sum_{n,m}^{\infty} \pnb{f_{n,m}\pna{\bar{N}} }^2 \sum_{N_i^a,N_i^l} \sum_{\substack{N_1,N_2,\\N_3,N_4}} \left|B_{N_i^a,n_i-N_i^a}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}  
+	B_{N_i^l,N_i^a-N_i^l}^{N_i^a,0}\pna{\eta_i^{\textrm{post}}}  B_{N_2,N_1}^{N_1^l,N_2^l}\pna{\frac{1}{2}} B_{N_4,N_3}^{N_3^l,N_4^l}\pna{\frac{1}{2}}\right.\nonumber \\
+	& \left.\qquad \cdot B_{1,N_1-1}^{N_1,0}\pna{\eta_1^{\textrm{pho}}}
+	 		B_{0,N_2}^{N_2,0}\pna{\eta_2^{\textrm{pho}}}
+	 		B_{0,N_3}^{N_3,0}\pna{\eta_3^{\textrm{pho}}}
+			B_{1,N_4-1}^{N_4,0}\pna{\eta_4^{\textrm{pho}}}\right|^2.
+\end{align}
+
+\begin{figure*}[t]
+\centering
+\subfigure[Single loss ($\eta_1^{\textrm{pre}}$).]{
+\includegraphics[width=0.47\textwidth]{figures/F14PostSinglePLOT.pdf}
+\label{fig:chap3:F14PostSinglePLOT}
+}
+\subfigure[Signal path losses ($\eta_1^{\textrm{pre}}$ and $\eta_2^{\textrm{pre}}$).]{
+\includegraphics[width=0.47\textwidth]{figures/F14PostMisMatchedPLOT.pdf}
+\label{fig:chap3:F14PostMisMatchedPLOT}
+}
+\subfigure[Mis-matched losses ($\eta_1^{\textrm{pre}}$ and $\eta_3^{\textrm{pre}}$).]{
+\includegraphics[width=0.47\textwidth]{figures/F14PostMisMatchedCompPLOT.pdf}
+\label{fig:chap3:F14PostMisMatchedCompPLOT}
+}
+\subfigure[Matched losses ($\eta_1^{\textrm{pre}}$ and $\eta_4^{\textrm{pre}}$).]{
+\includegraphics[width=0.47\textwidth]{figures/F14PostMatchedPLOT.pdf}
+\label{fig:chap3:F14PostMatchedPLOT}
+}
+\caption{\label{fig:chap3:asymmetric_pnrd_lossy} $F_1$ fidelities with non-uniform pre-transmission losses (PNRD) for $\bar{N}=0.05-0.3~\pna{\Delta \bar{N}=0.05}$. The caption in each subfigure specifies which of $\eta_i^{\textrm{pre}}~\pna{i=1,2,3,4}$ is varied for that calculation; those not specified are fixed at $0.9$.}
+\end{figure*}
+
+\begin{figure}[ht]
+\centering
+\subfigure[Heralding probability (uniform loss).]{
+\includegraphics[width=0.47\textwidth]{figures/pnrd_herald_pres.pdf}
+\label{fig:chap3:heralding_prob}
+}
+\subfigure[Fidelity (pre- and photodetection losses).]{
+\includegraphics[width=0.47\textwidth]{figures/pnrd_fidelity_pres.pdf}
+\label{fig:chap3:fidelity}
+}
+\caption{\label{fig:chap3:pnrd_data}Figures of merit with uniform losses (PNRD) for $\bar{N}=0.05-0.3~\pna{\Delta\bar{N}=0.05}$. Heralding probabilities are independent of a uniform loss' location: either before (pre-transmission) or after (post-transmission or photodetection) the ensemble (Fig.~\ref{fig:chap3:heralding_prob}). Pre-transmission losses preferentially decrease the fidelity of entanglement distribution compared to post-transmission and photo-detection losses (Fig.~\ref{fig:chap3:fidelity}).}
+\end{figure}
+
+The results of numerical calculations with these expressions are shown in
+Figures~\ref{fig:chap3:pnrd_data}
+and~\ref{fig:chap3:asymmetric_pnrd_lossy}. These figures distinguish between
+what we term `uniform' and `non-uniform' losses. Fig.~\ref{fig:chap3:pnrd_data}
+assumes that varying pre-transmission and photodetection losses are
+\emph{identical} for all four arms of the interferometer, whereas
+Fig.~\ref{fig:chap3:asymmetric_pnrd_lossy} makes no such assumption by
+considering the effects of only a \emph{single} loss or \emph{paired} losses as
+labelled in the captions. The presence of uniform losses in one
+location---before or after the ensembles or during photodetections--- has
+identical effects on the heralding probability. This heralding probability
+doesn't depend on where a single uniform loss is located, as a pump photon lost
+prior to the ensemble or a heralding photon lost after the ensemble ultimately
+will have the same heralding result. This is definitely not the case for the
+$F_1$ fidelity, as a pre-transmission loss of a pump photon precludes
+successful entanglement distribution. In this case, it is difficult to tell if
+matching signal and idler photons were stored simultaneously. By contrast, any
+post-transmission or photodetection loss has a much smaller effect on the
+fidelity. Post-transmission and photodetection loss are quantitatively equal in
+their fidelity effects. Lastly, increasing pump power in the OPA source matches
+intuition, as increasing $\bar{N}$ makes heralding events more likely, but
+decreases the desired fidelity due to multiple-pair effects. 
+
+In Fig.~\ref{fig:chap3:asymmetric_pnrd_lossy}, we see that fidelity of
+entanglement is fairly robust against a single pre-transmission loss, as well
+as uniform losses present only in the signal subsystem or uniform losses
+between paths matched for a successful heralding event detection. Uniform
+losses shared between mis-matched paths (e.g., varying $\eta_1$ and $\eta_3$)
+degrade fidelity significantly, almost as though transmission loss were
+uniformly shared by all the paths as in Fig.~\ref{fig:chap3:fidelity}. 
+
+\begin{figure}[ht]
+\centering
+\subfigure[$F_1$, uniform pre-transmission loss ($\eta^{\textrm{pre}}$).]{
+\includegraphics[width=0.47\textwidth]{figures/F14prephoNPRDPreLISTPLOT.pdf}
+\label{fig:chap3:F14prephoNPRDPreLISTPLOT}
+}
+\subfigure[$F_1$, uniform photodetection loss ($\eta^{\textrm{pho}}$).]{
+\includegraphics[width=0.47\textwidth]{figures/F14prephoNPRDPhoLISTPlot.pdf}
+\label{fig:chap3:F14prephoNPRDPhoLISTPlot}
+}
+\subfigure[Heralding probability (any uniform loss).]{
+\includegraphics[width=0.47\textwidth]{figures/P14prephoNPRDPhoLIST1PLOT.pdf}
+\label{fig:chap3:P14prephoNPRDPhoLIST1PLOT}
+}
+\caption{\label{fig:chap3:nrpd_lossy} Figures of merit with uniform losses (NRPD) for $\bar{N}=0.05-0.3~\pna{\Delta N = 0.05}$. Figures~\ref{fig:chap3:F14prephoNPRDPreLISTPLOT} and~\ref{fig:chap3:F14prephoNPRDPhoLISTPlot} show the $F_1$ fidelities for varying pre-transmission and photodetection efficiencies, respectively, with all other efficiencies fixed at $\eta=0.9$. Fig.~\ref{fig:chap3:P14prephoNPRDPhoLIST1PLOT} shows heralding probability for varying pre-transmission efficiency.}
+\end{figure}
+
+The remaining analysis case is non-resolving photodetection (NRPD), which we
+show in Fig.~\ref{fig:chap3:nrpd_lossy}. The details of this calculation are
+nearly identical to that shown in Sections~\ref{sec:example:first}
+and~\ref{sec:example:two}. Not surprisingly, as in the lossless NRPD analysis,
+the heralding probability is higher than in the PNRD case, and increasing
+$\bar{N}$ severely diminishes fidelity when both pre-transmission and
+photodetection losses occur. In the case of the latter, photodetection loss has
+almost no effect on the final fidelity of entanglement
+distribution. Pre-transmission losses in
+Fig.~\ref{fig:chap3:F14prephoNPRDPreLISTPLOT} demonstrate a residual dependence
+on pre-transmission loss for higher transmission efficiencies, consistent with
+our prior PNRD analysis. 
+
+
 \section{Entanglement Connection~\label{sec:herald:communication}}
 
 After successfully distributing entanglement to a pair of nodes, resulting in
@@ -895,7 +1302,7 @@ capabilities over distances prohibited by direct transmission.  In this
 section, we use post-selected, polarization-entangled ensembles to accomplish a
 basic task in long-distance quantum communication, namely entanglement
 swapping. The high level concepts underlying this procedure was described in
-Section~\ref{sec:intro:quantum_communication} of this thesis' introduction, and
+Section~\ref{sec:intro:entanglement} of this thesis' introduction, and
 is a modification of the DLCZ protocol's application to quantum
 communication~\cite{nature35106500}.
 
@@ -932,8 +1339,12 @@ completion of entanglement connection protocol when the A and B ensembles were
 both in their singlet states. Two signal ensemble pairs in independent singlet
 states can be separated into four orthogonal basis states
 \begin{align}
-\ket{\psi}^A \otimes \ket{\psi}^B & = \frac{1}{\sqrt{2}}\pna{\ket{1}_{S_y^A}\ket{0}_{S_x^A}\ket{0}_{I_y^A}\ket{1}_{I_x^A}-\ket{0}_{S_y^A}\ket{1}_{S_x^A}\ket{1}_{I_y^A}\ket{0}_{I_x^A}}\nonumber \\ & \qquad \otimes \frac{1}{\sqrt{2}}\pna{\ket{1}_{S_y^B}\ket{0}_{S_x^B}\ket{0}_{I_y^B}\ket{1}_{I_x^B}-\ket{0}_{S_y^B}\ket{1}_{S_x^B}\ket{1}_{I_y^B}\ket{0}_{I_x^B}} \nonumber \\
-& = \ket{\phi_{yy}}+\ket{\phi_{yx}}+\ket{\phi_{xy}}+\ket{\phi_{xx}},
+& \ket{\psi}^A \otimes \ket{\psi}^B \nonumber \\ 
+& \qquad =
+\frac{1}{\sqrt{2}}\pna{\ket{1}_{S_y^A}\ket{0}_{S_x^A}\ket{0}_{I_y^A}\ket{1}_{I_x^A}-\ket{0}_{S_y^A}\ket{1}_{S_x^A}\ket{1}_{I_y^A}\ket{0}_{I_x^A}}\nonumber
+\\ 
+& \qquad \qquad \otimes \frac{1}{\sqrt{2}}\pna{\ket{1}_{S_y^B}\ket{0}_{S_x^B}\ket{0}_{I_y^B}\ket{1}_{I_x^B}-\ket{0}_{S_y^B}\ket{1}_{S_x^B}\ket{1}_{I_y^B}\ket{0}_{I_x^B}} \nonumber \\
+& \qquad = \ket{\phi_{yy}}+\ket{\phi_{yx}}+\ket{\phi_{xy}}+\ket{\phi_{xx}},
 \end{align}
 where each $\ket{\phi_{ij}}~\pna{i,j=x,y}$ labels a joint state with
 signal-photon polarizations $i$ and $j$ in each path prior to interference.
@@ -984,12 +1395,12 @@ $D_A\pna{\hat{a}_i,\zeta_i}=e^{-\zeta_i^* \hat{a}_i}e^{\zeta_i
 }
 The optical modes reaching the detectors $D_i$ in
 Fig.~\ref{fig:channel_loss_model} are
-\eqn{
-\mathbf{\hat{a}}^{\textrm{out}}_S= 
+\begin{align}
+\mathbf{\hat{a}}^{\textrm{out}}_S & = 
 \sqrt{\eta^{\textrm{pho}}\eta^{\textrm{pre}}} \mathbf{B} \mathbf{\hat{a}}^{\textrm{S}}_{\textrm{in}}
 +\sqrt{\eta^{\textrm{pho}}\pna{1-\eta^{\textrm{pre}}}}\mathbf{B} \mathbf{\hat{a}}^{\textrm{pre}}_v
-+\sqrt{1-\eta^{\textrm{pho}}}\mathbf{\hat{a}}^{\textrm{pho}}_v
-}
+ \nonumber \\ & \qquad +\sqrt{1-\eta^{\textrm{pho}}}\mathbf{\hat{a}}^{\textrm{pho}}_v
+\end{align}
 where we have defined the operator-valued vectors
 \begin{align}
 	\mathbf{\hat{a}}^{\textrm{out}}_S&=\pnb{\hat{a}_{S^A_y}',\hat{a}_{S^B_y}',\hat{a}_{S^A_x}',\hat{a}_{S^B_x}'}^{\textrm{T}} \nonumber\\
@@ -1018,11 +1429,12 @@ remain unchanged. The Gaussian mixed-state of the Stokes light arriving at the
 detectors and the idler ensemble excitations is given by the
 antinormally-ordered characteristic function
 \begin{align}
-	\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}, \bm{\tilde{\zeta}}}
-	& =\langle D_A\pna{\mathbf{\hat{a}}_S^{\textrm{out}}, \bm{\zeta}_S} D_A\pna{\mathbf{\hat{S}}_I^{\textrm{in}}, \bm{\zeta}_I} \rangle\nonumber \\
-	& = \chi_A^{\rho_{\textrm{in}}}\pna{\pnb{\sqrt{\eta_{\textrm{meas}}}\tilde{\zeta}_{S^A_y},\sqrt{\eta_{\textrm{meas}}}\tilde{\zeta}_{S^B_y},\sqrt{\eta_{\textrm{meas}}}\tilde{\zeta}_{S^A_x},\sqrt{\eta_{\textrm{meas}}}\tilde{\zeta}_{S^B_x},
+	& \chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}, \bm{\tilde{\zeta}}}
+        \nonumber \\
+	& \qquad =\langle D_A\pna{\mathbf{\hat{a}}_S^{\textrm{out}}, \bm{\zeta}_S} D_A\pna{\mathbf{\hat{S}}_I^{\textrm{in}}, \bm{\zeta}_I} \rangle\nonumber \\
+	& \qquad = \chi_A^{\rho_{\textrm{in}}}\pna{\pnb{\sqrt{\eta_{\textrm{meas}}}\tilde{\zeta}_{S^A_y},\sqrt{\eta_{\textrm{meas}}}\tilde{\zeta}_{S^B_y},\sqrt{\eta_{\textrm{meas}}}\tilde{\zeta}_{S^A_x},\sqrt{\eta_{\textrm{meas}}}\tilde{\zeta}_{S^B_x},
     \zeta_{I^A_y},\zeta_{I^B_y},\zeta_{I^A_x},\zeta_{I^B_x}}^{T}} \nonumber \\
-    & \qquad \cdot \exp\pnb{-\sum_{\{\tilde{\zeta}_i\}}\eta^{\textrm{pho}}\pna{1- \eta^{\textrm{pre}}}|\tilde{\zeta}_i|^2-\sum_{\{{\zeta}_i\}}\pna{1-\eta^{\textrm{pho}}}|{\zeta}_i|^2} \label{eqn:chap3:chia_orig}
+    & \qquad \qquad \cdot \exp\pnb{-\sum_{\{\tilde{\zeta}_i\}}\eta^{\textrm{pho}}\pna{1- \eta^{\textrm{pre}}}|\tilde{\zeta}_i|^2-\sum_{\{{\zeta}_i\}}\pna{1-\eta^{\textrm{pho}}}|{\zeta}_i|^2} \label{eqn:chap3:chia_orig}
 \end{align}
 where the scaled $\tilde{\bm{\zeta}}$ result from the transformation of the
 beam splitter transformation in Eqn.~\ref{eqn:chap3:linear_beamsplitter}:
@@ -1072,21 +1484,20 @@ re-expressing Eqn.~\ref{eq:char_final} as
 }
 where $p_{\mathbf{Z}}\pna{\bm{\zeta}}$ is the probability density function for
 a zero-mean Gaussian random vector $\bm{\zeta}$ with covariance matrices
-\eqn{ 
-\langle \bm{\zeta}\bm{\zeta}^{\dagger}\rangle=\frac{1}{D_1}\left[ 
+\begin{align}
+\langle \bm{\zeta}\bm{\zeta}^{\dagger}\rangle&=\frac{1}{D_1}\left[ 
 \begin{array}{cc}
 \pna{1+\eta_{\textrm{meas}} \bar{N}} \mathbf{I}_{4\times 4} &  \mathbf{0}_{4\times 4} \\
  \mathbf{0}_{4\times 4} & \pna{1+\bar{N}} \mathbf{I}_{4\times 4}
 \end{array} 
-\right]
-\quad
-\langle \bm{\zeta}\bm{\zeta}^{T}\rangle=\frac{1}{D_1}\left[ 
+\right] \nonumber \\
+\langle \bm{\zeta}\bm{\zeta}^{T}\rangle&=\frac{1}{D_1}\left[ 
 \begin{array}{cc}
  \mathbf{0}_{4\times 4} & \mathbf{N}_{4\times 4} \\
  \mathbf{N}_{4\times 4}^T & \mathbf{0}_{4\times 4}
 \end{array} 
 \right]\label{eq:chap3:moments}
-}
+\end{align}
 for 
 \eqn{
 \mathbf{N}_{4\times 4}=\tilde{N}\sqrt{2\eta_{\textrm{meas}}}\left[ 
@@ -1126,10 +1537,11 @@ Eqn.~\ref{eq:fourier_char}, we know that
 \bra{0} D_N\pna{\hat{a}_i,\zeta_i} \ket{0}=1 \qquad  \bra{1}D_N\pna{\hat{a}_i,\zeta_i}\ket{1}=1-|\zeta_i|^2
 }
 and that
-\eqn{
-\textrm{tr}\pnb{D_N\pna{\hat{a}_i,\zeta_i}}=\pi\delta\pna{\zeta_i} \qquad \textrm{tr}\pnb{D_N\pna{\hat{a}_i,\zeta_i}\pna{\hat{I}-\ket{0}\bra{0}}}=
+\begin{align}
+\textrm{tr}\pnb{D_N\pna{\hat{a}_i,\zeta_i}} &=\pi\delta\pna{\zeta_i} \nonumber
+\\ \textrm{tr}\pnb{D_N\pna{\hat{a}_i,\zeta_i}\pna{\hat{I}-\ket{0}\bra{0}}} &=
 \pi\delta\pna{\zeta_i}-1.\label{eq:chap3:trace_id}
-}
+\end{align}
 Performing trace operations on the $\hat{a}_i$ mode of an output density
 operator is equivalent to setting $\zeta_i=0$ in its characteristic function,
 so any Gaussian moment calculations in the following may involve a marginal
@@ -1176,14 +1588,16 @@ D_N\pna{\hat{S}_{I_i^B},\zeta_{I_i^B}}  \nonumber \\
 \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2},
 \end{align}
 where the heralding probability is
-\eqn{
-P_{\textrm{herald}}^{yx} =
+\begin{align}
+P_{\textrm{herald}}^{yx} & =
 \int 
 \frac{d^2 \zeta_{S_y^A}}{\pi^2} 
-\frac{d^2 \zeta_{S_x^B}}{\pi^2}
-\chi_A^{\rho_{\textrm{out}}}\pna{\pnb{\zeta_{S_y^A},\zeta_{S_y^B},\zeta_{S_x^A},\zeta_{S_x^B},0,0,0,0}^T} 
-\pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2}.
-}
+\frac{d^2 \zeta_{S_x^B}}{\pi^2} \nonumber \\ 
+& \qquad \cdot
+\chi_A^{\rho_{\textrm{out}}}\pna{\pnb{\zeta_{S_y^A},\zeta_{S_y^B},\zeta_{S_x^A},\zeta_{S_x^B},0,0,0,0}^T}
+\nonumber \\ 
+& \qquad \cdot \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2}.
+\end{align}
 Applying the Gaussian moment factoring theorem, this heralding probability is
 \begin{align}
 P_{\textrm{herald}}^{yx}&=\frac{1}{D_2}\langle \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2} \rangle \nonumber \\
@@ -1215,11 +1629,14 @@ D_N\pna{\hat{S}_{I_i^B},\zeta_{I_i^B}}  \nonumber \\
 \end{align}
 Tracing out the idler excitation modes, the NRPD heralding probability is 
 \begin{align}
-& P_{\textrm{herald}}^{yx} = \nonumber \\
-& \qquad \int 
+& P_{\textrm{herald}}^{yx} = \nonumber \ \int 
 \prod_{i=x,y}
 \frac{d^2 \zeta_{S_i^A}}{\pi^2} 
-\frac{d^2 \zeta_{S_i^B}}{\pi^2} \chi_A^{\rho_{\textrm{out}}}\pna{\pnb{\zeta_{S_y^A},\zeta_{S_y^B},\zeta_{S_x^A},\zeta_{S_x^B},0,0,0,0}^T} 
+\frac{d^2 \zeta_{S_i^B}}{\pi^2} \nonumber \\ 
+& \qquad \qquad \cdot
+\chi_A^{\rho_{\textrm{out}}}\pna{\pnb{\zeta_{S_y^A},\zeta_{S_y^B},\zeta_{S_x^A},\zeta_{S_x^B},0,0,0,0}^T}
+\nonumber \\
+& \qquad \qquad \cdot 
 \pnb{\pi\delta\pna{\zeta_{S_y^A}}-1}\pnb{\pi\delta\pna{\zeta_{S_x^B}}-1},
 \end{align}
 which yields
@@ -1236,23 +1653,9 @@ excitation $\bar{N}$ will yield more anti-Stokes photons, resulting in a higher
 likelihood of a heralding event when the photodetectors cannot resolve photon
 number.
 
-The fidelity, when a $\mathbf{y}$-polarized $D_A$ click and a
-$\mathbf{x}$-polarized $D_B$ click provide the herald, is given by
-\begin{align}
-F_{yx} & = \bra{\psi_{1}} \hat{\rho}_{\textrm{post}}^{yx} \ket{\psi_1} \nonumber \\
-& =\frac{1}{P_{\textrm{herald}}^{yx}}\int 
-\prod_{i=x,y}\frac{d^2 \zeta_{I_i^A}}{\pi^2} 
-\frac{d^2 \zeta_{I_i^B}}{\pi^2} 
-\pnb{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \nonumber \\
-& \qquad \cdot \int 
-\frac{d^2 \zeta_{S_y^A}}{\pi^2} 
-\frac{d^2 \zeta_{S_x^B}}{\pi^2}
-\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} 
-\pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2} \nonumber \\
-& = \frac{1}{D_1 P_{\textrm{herald}}^{yx}}\langle \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2}\pna{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \rangle.
-\end{align}
-
-The necessary higher-order moments for this calculation are, from Gaussian moment factoring
+\begin{comment}
+The necessary higher-order moments for this calculation are, from Gaussian
+moment factoring
 \begin{align}
  \langle |\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2 \rangle & = \langle |\zeta_{I_x^A}|^2 \rangle \langle |\zeta_{I_y^B}|^2 \rangle+\langle |\zeta_{I_y^A}|^2 \rangle \langle |\zeta_{I_x^B}|^2\rangle \nonumber \\
  \langle |\zeta_{S_y^A}|^2  |\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2 \rangle & = \langle |\zeta_{S_y^A}|^2\rangle \langle |\zeta_{I_x^A}|^2\rangle \langle |\zeta_{I_y^B}|^2\rangle + \langle |\zeta_{S_y^A}|^2\rangle \langle |\zeta_{I_y^A}|^2\rangle \langle |\zeta_{I_x^B}|^2\rangle \nonumber \\
@@ -1268,8 +1671,26 @@ The necessary higher-order moments for this calculation are, from Gaussian momen
      & \left.\qquad\qquad + \langle \zeta_{S_y^A} \zeta_{I_x^B}\rangle \langle \zeta_{S_y^{A}}^* \zeta_{I_x^{A}}^*\rangle \langle \zeta_{S_x^B} \zeta_{I_y^A}\rangle \langle \zeta_{S_x^{B}}^* \zeta_{I_y^{B}}^*\rangle\right]
      \label{eq:yx:moment}
 \end{align}
-Applying the covariance matrix in Eqn.~\ref{eq:chap3:moments} to these
-higher-order moment expressions, the PNRD fidelity is given by
+\end{comment}
+
+The fidelity, when a $\mathbf{y}$-polarized $D_A$ click and a
+$\mathbf{x}$-polarized $D_B$ click provide the herald, is given by
+\begin{align}
+F_{yx} & = \bra{\psi_{1}} \hat{\rho}_{\textrm{post}}^{yx} \ket{\psi_1} \nonumber \\
+& =\frac{1}{P_{\textrm{herald}}^{yx}}\int 
+\prod_{i=x,y}\frac{d^2 \zeta_{I_i^A}}{\pi^2} 
+\frac{d^2 \zeta_{I_i^B}}{\pi^2} 
+\pnb{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \nonumber \\
+& \qquad \cdot \int 
+\frac{d^2 \zeta_{S_y^A}}{\pi^2} 
+\frac{d^2 \zeta_{S_x^B}}{\pi^2}
+\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} 
+\pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2} \nonumber \\
+& = \frac{1}{D_1 P_{\textrm{herald}}^{yx}}\langle \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2}\pna{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \rangle.
+\end{align}
+Applying the covariance matrix in Eqn.~\ref{eq:chap3:moments} and the Gaussian
+moment factoring theorem to these higher-order moment expressions, the PNRD
+fidelity is given by
 \begin{align}
 F_{yx}&=\left[\frac{1}{D_1^3}\pnb{D_1^2-2\pna{1+\eta_{\textrm{meas}}\bar{N}}1_2+\pna{1+\eta_{\textrm{meas}}\bar{N}}^2}\right.\nonumber\\
 & \qquad \left.-\frac{1}{2D_1} \left(\frac{2\pna{1+\bar{N}}^2}{D_1^2}-\frac{4\pna{1+\eta_{\textrm{meas}}\bar{N}}\pna{1+\bar{N}}^2+8\eta\pna{1+\bar{N}}\tilde{N}^2}{D_1^3}\right.\right.\nonumber\\
@@ -1284,13 +1705,15 @@ F_{yy} & = \frac{1}{D_1 P_{\textrm{herald}}^{yy}}\langle
 \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_y^B}|^2}\nonumber \\ & \qquad \cdot\pna{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \rangle.
 \end{align}
 The calculation is identical to that for $F_{yx}$ save for the eighth-order
-moment, which factors into
+moment.
+\begin{comment}
 \begin{align}
 & \langle |\zeta_{S_y^A}|^2  |\zeta_{S_y^B}|^2|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2 \rangle = \nonumber \\
 & \qquad\langle |\zeta_{S_y^A}|^2\rangle \langle |\zeta_{S_y^B}|^2\rangle \langle |\zeta_{I_x^A}|^2\rangle \langle |\zeta_{I_y^B}|^2\rangle + \langle |\zeta_{S_y^A}|^2\rangle \langle |\zeta_{S_y^B}|^2\rangle \langle |\zeta_{I_y^A}|^2\rangle \langle |\zeta_{I_x^B}|^2\rangle \nonumber \\
        & \qquad\qquad + |\langle \zeta_{S_y^B} \zeta_{I_x^A}\rangle|^2 \langle| \zeta_{S_y^A}|^2\rangle \langle|\zeta_{I_y^B}|^2\rangle + |\langle \zeta_{S_y^A} \zeta_{I_x^A}\rangle|^2 \langle| \zeta_{S_y^B}|^2\rangle \langle|\zeta_{I_y^B}|^2\rangle  \nonumber \\
        & \qquad\qquad + |\langle \zeta_{S_y^A} \zeta_{I_x^B}\rangle|^2 \langle| \zeta_{I_y^A}|^2\rangle \langle|\zeta_{S_y^B}|^2\rangle + |\langle \zeta_{S_y^B} \zeta_{I_x^B}\rangle|^2 \langle| \zeta_{S_y^A}|^2\rangle \langle|\zeta_{I_y^A}|^2\rangle.\label{eq:yy:moment}
 \end{align}
+\end{comment}
 
 Comparing Eqn.~\ref{eq:yy:moment} and~\ref{eq:yx:moment}, it immediately
 becomes obvious that the $F_{yy}$ and $F_{yx}$ differ in their contribution to
@@ -1333,9 +1756,11 @@ second-moments of the idler ensembles and the normalizations inherent in the
 marginal probability distributions following photodetection, each of which is
 independent of photon polarization. Equation~\ref{eqn:fyx_nrpd} thus simplifies
 to
+\begin{widetext}
 \begin{align}
     F_{yx}=\frac{1}{P_{\textrm{herald}}^{yx}}\pnb{\frac{(\bar{N}+1)^6 (\eta_{\textrm{meas}}  \bar{N}+1)^7-2 (\bar{N}+1)^6 (\eta_{\textrm{meas}}  \bar{N}+1)^6+1}{(\bar{N}+1)^{10} (\eta_{\textrm{meas}}  \bar{N}+1)^9} +\frac{1}{D_1}-\frac{\pna{\bar{N}+1}^2}{D_1^3}},
 \end{align}
+\end{widetext}
 which is plotted in Fig.~\ref{fig:chap3:con:fidelity}. The PNRD case lets us
 actively discard garbage photodetection events that might result from
 multiple-excitations present at entanglement distribution. In this case, we
