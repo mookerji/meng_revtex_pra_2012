@@ -1263,7 +1263,7 @@ losses shared between mis-matched paths (e.g., varying $\eta_1$ and $\eta_3$)
 degrade fidelity significantly, almost as though transmission loss were
 uniformly shared by all the paths as in Fig.~\ref{fig:chap3:fidelity}. 
 
-\begin{figure}[ht]
+\begin{figure*}[ht]
 \centering
 \subfigure[$F_1$, uniform pre-transmission loss ($\eta^{\textrm{pre}}$).]{
 \includegraphics[width=0.47\textwidth]{figures/F14prephoNPRDPreLISTPLOT.pdf}
@@ -1278,7 +1278,7 @@ uniformly shared by all the paths as in Fig.~\ref{fig:chap3:fidelity}.
 \label{fig:chap3:P14prephoNPRDPhoLIST1PLOT}
 }
 \caption{\label{fig:chap3:nrpd_lossy} Figures of merit with uniform losses (NRPD) for $\bar{N}=0.05-0.3~\pna{\Delta N = 0.05}$. Figures~\ref{fig:chap3:F14prephoNPRDPreLISTPLOT} and~\ref{fig:chap3:F14prephoNPRDPhoLISTPlot} show the $F_1$ fidelities for varying pre-transmission and photodetection efficiencies, respectively, with all other efficiencies fixed at $\eta=0.9$. Fig.~\ref{fig:chap3:P14prephoNPRDPhoLIST1PLOT} shows heralding probability for varying pre-transmission efficiency.}
-\end{figure}
+\end{figure*}
 
 The remaining analysis case is non-resolving photodetection (NRPD), which we
 show in Fig.~\ref{fig:chap3:nrpd_lossy}. The details of this calculation are
@@ -1296,6 +1296,14 @@ our prior PNRD analysis.
 
 \section{Entanglement Connection~\label{sec:herald:communication}}
 
+\begin{figure*}[htb]
+	\centering
+	\resizebox{5.00in}{!}{\input ent_connection.pdf_t}
+	%\input{spdc_dlcz_fin.pdf_t}
+	\caption{Polarization entanglement connection. We assume that ensembles A and B are independently in polarization singlet states or Gaussian states following entanglement distribution in Section~\ref{sec:herald:overview}. The anti-Stokes photons from reading the A and B signal ensembles are interfered at the 50-50 beam splitter. Photon detections at $D_A$ \emph{and} $D_B$ heralds entanglement connection between the idler ensembles A and B.
+	\label{fig:entanglement_connection}}
+\end{figure*}
+
 After successfully distributing entanglement to a pair of nodes, resulting in
 local entanglement, we will want to extend our quantum communication
 capabilities over distances prohibited by direct transmission.  In this
@@ -1305,14 +1313,6 @@ swapping. The high level concepts underlying this procedure was described in
 Section~\ref{sec:intro:entanglement} of this thesis' introduction, and
 is a modification of the DLCZ protocol's application to quantum
 communication~\cite{nature35106500}.
-
-\begin{figure*}[t]
-	\centering
-	\resizebox{5.00in}{!}{\input ent_connection.pdf_t}
-	%\input{spdc_dlcz_fin.pdf_t}
-	\caption{Polarization entanglement connection. We assume that ensembles A and B are independently in polarization singlet states or Gaussian states following entanglement distribution in Section~\ref{sec:herald:overview}. The anti-Stokes photons from reading the A and B signal ensembles are interfered at the 50-50 beam splitter. Photon detections at $D_A$ \emph{and} $D_B$ heralds entanglement connection between the idler ensembles A and B.
-	\label{fig:entanglement_connection}}
-\end{figure*}
 
 Fig.~\ref{fig:entanglement_connection} outlines a procedure for accomplishing
 polarization entanglement connection with atomic ensembles. Polarization
