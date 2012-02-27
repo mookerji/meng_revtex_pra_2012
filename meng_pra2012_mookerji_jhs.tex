@@ -887,15 +887,17 @@ P_{\textrm{in}}\pna{n_1, n_2} & = \rho_{\textrm{in}}\pna{n_1,n_2;n_1,n_2},
 
 The beam splitter's physical symmetries allow us to extend the Jacobi
 polynomials over the full range photon-number output probabilities:
+%\begin{widetext}
 \eqn{
    R_{N_1,N_2}^{n_1,n_2}\pna{\eta} = \left\{
      \begin{array}{lr}
         \pna{-1}^{N_1 - n_1} R_{n_1,n_2}^{N_1,N_2}\pna{\eta} & n_2 \leq N_1 < n_1 \\
        R_{n_2,n_1}^{N_2,N_1}\pna{\eta} & n_1 \leq N_1 < n_2 \\
-	   \pna{-1}^{N_1 - n_1} R_{N_2,N_1}^{n_2,n_1}\pna{\eta} &\qquad n_1 > N_1,~n_2 > N_1 \\
+	   \pna{-1}^{N_1 - n_1} R_{N_2,N_1}^{n_2,n_1}\pna{\eta} & n_1 > N_1,~n_2 > N_1 \\
 	0 & n_1+n_2\neq N_1+N_2
      \end{array}
 \right..}
+%\end{widetext}
 We have made the unitary constraint explicit, as the Jacobi polynomials are not
 \emph{ad hoc} restricted to events for which
 $n_1+n_2=N_1+N_2$. Eqn.~\ref{eq:rho_output} simplifies because beam splitter
@@ -928,10 +930,12 @@ lossless entanglement distribution? We assume that the input field phase shifts
 idler modes experience linear loss independently. Therefore, to avoid
 redundancy in the notation, we write the Gaussian state in
 Eqn.~\ref{eq:final_singlet}, at all orders, as 
-\eqn{
-\ket{\psi}_{\textrm{in}}=\sum_{n,m=0}^{\infty} \pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}}\ket{n}_{S_y}\ket{m}_{S_x}\ket{m}_{I_y}\ket{n}_{I_x} 
- \rightarrow \sum_{n,m=0}^{\infty} f_{n,m}\pna{\bar{N}}\ket{n_i}^i,
-}
+\begin{align}
+\ket{\psi}_{\textrm{in}}&=\sum_{n,m=0}^{\infty}
+\pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}} \ket{n}_{S_y}\ket{m}_{S_x}\ket{m}_{I_y}\ket{n}_{I_x}
+\nonumber \\
+ & \rightarrow \sum_{n,m=0}^{\infty} f_{n,m}\pna{\bar{N}}\ket{n_i}^i,
+\end{align}
 where $f_{n,m}\pna{\bar{N}}$ abstracts the thermal statistics of the OPAs. Any
 state or term having a variable indexed by $i~\pna{i=1,2,3,4}$ actually denotes
 a product of four terms acting at separately on those photodetection branches,
@@ -945,18 +949,20 @@ respectively. All photons impinging on the ensembles that form the memory are
 converted into heralding photons and spin excitations. The resulting state of
 the heralding photons and the spin excitations in therefore
 \begin{align}
-\ket{\psi}_{\textrm{post-ensemble}}& = \sum_{n,m} \pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}} 
-\ket{n}^1_b \ket{m}^2_b \ket{m}^3_b \ket{n}^4_b 
+\ket{\psi}_{\textrm{post-ens.}}& = \sum_{n,m}
+\pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}}  \nonumber \\
+& \qquad \ket{n}^1_b \ket{m}^2_b \ket{m}^3_b \ket{n}^4_b 
 \ket{n}^1_S \ket{m}^2_S \ket{m}^3_S \ket{n}^4_S  \nonumber  \\
 & \rightarrow \sum_{n,m}f_{n,m}\pna{\bar{N}}\ket{n_i}^i_b\ket{n_i}^i_S.
 \end{align}
 Following interference of the heralding photons at the beam splitters in
 Fig.~\ref{fig:channel_model}, the joint state of the ensembles and the
 heralding photons at the photodetectors is
-\eqn{
-\ket{\psi}_{\textrm{out}} =\sum_{N_i^p}\sum_{n,m} \underbrace{f_{n,m}\pna{\bar{N}}}_\text{SPDC} \underbrace{B_{N_2^p,N_1^p}^{n,m}\pna{\frac{1}{2}}  
-B_{N_4^p,N_3^p}^{m,n}\pna{\frac{1}{2}}}_\text{Interference Amplitude}\ket{N_i^p}^i_p\ket{n_i}^i_S, \label{eq:chap3:lossless_output}
-}
+\begin{align}
+\ket{\psi}_{\textrm{out}} &=\sum_{N_i^p}\sum_{n,m} \underbrace{f_{n,m}\pna{\bar{N}}}_\text{SPDC} \underbrace{B_{N_2^p,N_1^p}^{n,m}\pna{\frac{1}{2}}  
+B_{N_4^p,N_3^p}^{m,n}\pna{\frac{1}{2}}}_\text{Interference Amplitude}\nonumber
+\\ & \qquad \qquad \cdot\ket{N_i^p}^i_p\ket{n_i}^i_S, \label{eq:chap3:lossless_output}
+\end{align}
 where we have suppressed the phase arguments in the beam splitter coefficients
 because $\phi_t=\phi_r=0$. In Eqn.~\ref{eq:chap3:lossless_output}, the
 interference amplitude terms correspond to the mixing of $m$ and $n$ photons at
@@ -1166,6 +1172,7 @@ sections, we only list expressions for matching photodetection events at $D_1$
 and $D_4$, as corresponding expressions for $D_2$ and $D_3$ are found by simple
 substitution. Accounting for all losses, the full output state of the
 architecture, as shown in Fig.~\ref{fig:channel_loss_model}, is given by,
+\begin{widetext}
 \begin{align}
 \ket{\psi}_{\textrm{out}} & = \sum_{n,m} f_{n,m}\pna{\bar{N}} \nonumber \\
 & \hspace{-5mm}\cdot
@@ -1176,8 +1183,10 @@ B_{N_i^l,N_i^{\textrm{post}}}^{N_i^a,0}\pna{\eta_i^{\textrm{post}}}}_\text{Pre-I
 \underbrace{B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}}}_\text{Photodetection Loss}}   \nonumber \\
 & \qquad \quad \cdot \underbrace{\ket{N_i^p}_{p}^i \ket{N_i^a}_{S}^i}_\text{Heralded \& Ensemble Modes} \underbrace{\ket{N_i^{\textrm{pho}}}_{\textrm{pho}}^i \ket{N_i^{\textrm{post}}}_{\textrm{post}}^i \ket{N_i^{\textrm{pre}}}_{\textrm{pre}}^i}_\text{Auxiliary Noise Modes}. 
 \end{align}
+\end{widetext}
 and the corresponding joint density operator of the heralded photon and
 ensemble modes is 
+\begin{widetext}
 \begin{align}
 	\hat{\rho}_{\textrm{out}}^{p,S} & = \sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}} f_{n',m'}\pna{\bar{N}} \nonumber \\
 	& \qquad \cdot\sum_{\substack{N_i^a,N_i^{\textrm{pre}}\\ N_i^{a\prime} }} \sum_{\substack{N_i^l,N_i^{\textrm{post}}\\ N_i^{l\prime} }}
@@ -1187,7 +1196,10 @@ ensemble modes is
 	& \qquad \cdot \sum_{\substack{N_i^p,N_i^{\textrm{pho}}\\ N_i^{p\prime} }}
 	 B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}} \pnb{B_{N_i^{p\prime},N_i^{\textrm{pho}}}^{N_i',0}\pna{\eta_i^{\textrm{pho}}}}^{*} \ket{N_i^p}_{p}^i \ket{N_i^a}_{S}^i \bra{N_i^{p\prime}}_{p}^i \bra{N_i^{a\prime}}_{S}^i,
 \end{align}
-and the PNRD probability that a heralding event $\hat{M}_{1}$ has occurred is then
+\end{widetext}
+and the PNRD probability that a heralding event $\hat{M}_{1}$ has occurred is
+then
+\begin{widetext}
 \begin{align}
 	P_{1}& =\textrm{tr}\pna{\hat{\rho}_{\textrm{out}}^{p,S} M_{1}}\nonumber \\
 	& = \sum_{n,m}^{\infty} \pnb{f_{n,m}\pna{\bar{N}} }^2 \sum_{N_i^a,N_i^l} \sum_{\substack{N_1,N_2,\\N_3,N_4}} \left|B_{N_i^a,n_i-N_i^a}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}  
@@ -1197,6 +1209,7 @@ and the PNRD probability that a heralding event $\hat{M}_{1}$ has occurred is th
 	 		B_{0,N_3}^{N_3,0}\pna{\eta_3^{\textrm{pho}}}
 			B_{1,N_4-1}^{N_4,0}\pna{\eta_4^{\textrm{pho}}}\right|^2.
 \end{align}
+\end{widetext}
 
 \begin{figure*}[t]
 \centering
@@ -1339,12 +1352,11 @@ completion of entanglement connection protocol when the A and B ensembles were
 both in their singlet states. Two signal ensemble pairs in independent singlet
 states can be separated into four orthogonal basis states
 \begin{align}
-& \ket{\psi}^A \otimes \ket{\psi}^B \nonumber \\ 
-& \qquad =
-\frac{1}{\sqrt{2}}\pna{\ket{1}_{S_y^A}\ket{0}_{S_x^A}\ket{0}_{I_y^A}\ket{1}_{I_x^A}-\ket{0}_{S_y^A}\ket{1}_{S_x^A}\ket{1}_{I_y^A}\ket{0}_{I_x^A}}\nonumber
+\ket{\psi}^A \otimes \ket{\psi}^B & =
+\frac{1}{\sqrt{2}}\pna{\ket{H}_{S^A}\ket{V}_{I^A}-\ket{V}_{S^A}\ket{H}_{I^A}}\nonumber
 \\ 
-& \qquad \qquad \otimes \frac{1}{\sqrt{2}}\pna{\ket{1}_{S_y^B}\ket{0}_{S_x^B}\ket{0}_{I_y^B}\ket{1}_{I_x^B}-\ket{0}_{S_y^B}\ket{1}_{S_x^B}\ket{1}_{I_y^B}\ket{0}_{I_x^B}} \nonumber \\
-& \qquad = \ket{\phi_{yy}}+\ket{\phi_{yx}}+\ket{\phi_{xy}}+\ket{\phi_{xx}},
+& \qquad \otimes \frac{1}{\sqrt{2}}\pna{\ket{H}_{S^B}\ket{V}_{I^B}-\ket{V}_{S^B}\ket{H}_{I^B}} \nonumber \\
+& = \ket{\phi_{yy}}+\ket{\phi_{yx}}+\ket{\phi_{xy}}+\ket{\phi_{xx}},
 \end{align}
 where each $\ket{\phi_{ij}}~\pna{i,j=x,y}$ labels a joint state with
 signal-photon polarizations $i$ and $j$ in each path prior to interference.
@@ -1403,10 +1415,10 @@ Fig.~\ref{fig:channel_loss_model} are
 \end{align}
 where we have defined the operator-valued vectors
 \begin{align}
-	\mathbf{\hat{a}}^{\textrm{out}}_S&=\pnb{\hat{a}_{S^A_y}',\hat{a}_{S^B_y}',\hat{a}_{S^A_x}',\hat{a}_{S^B_x}'}^{\textrm{T}} \nonumber\\
-	\mathbf{\hat{a}}_{S}^{\textrm{in}}&=\pnb{\hat{a}_{S^A_y},\hat{a}_{S^B_y},\hat{a}_{S^A_x},\hat{a}_{S^B_x}}^{\textrm{T}} \nonumber\\
-	\mathbf{\hat{a}}^{\textrm{pre}}&=\pnb{\hat{a}_1^{\textrm{pre}},\ldots, \hat{a}_4^{\textrm{pre}}}^{\textrm{T}} \nonumber\\
-	\mathbf{\hat{a}}^{\textrm{pho}}&=\pnb{\hat{a}^{\textrm{pho}}_1,\ldots, \hat{a}^{\textrm{pho}}_4}^{\textrm{T}}
+	\mathbf{\hat{a}}^{\textrm{out}}_S&=\pnb{\hat{a}_{S^A_y}',\hat{a}_{S^B_y}',\hat{a}_{S^A_x}',\hat{a}_{S^B_x}'}^{{T}} \nonumber\\
+	\mathbf{\hat{a}}_{S}^{\textrm{in}}&=\pnb{\hat{a}_{S^A_y},\hat{a}_{S^B_y},\hat{a}_{S^A_x},\hat{a}_{S^B_x}}^{{T}} \nonumber\\
+	\mathbf{\hat{a}}^{\textrm{pre}}&=\pnb{\hat{a}_1^{\textrm{pre}},\ldots, \hat{a}_4^{\textrm{pre}}}^{{T}} \nonumber\\
+	\mathbf{\hat{a}}^{\textrm{pho}}&=\pnb{\hat{a}^{\textrm{pho}}_1,\ldots, \hat{a}^{\textrm{pho}}_4}^{{T}}
 \end{align}
 with the linear transformation of the signal modes:
 \eqn{ 
@@ -1424,17 +1436,18 @@ with the linear transformation of the signal modes:
 1 & 1 \\
 1 & -1\end{array} \right].\label{eqn:chap3:linear_beamsplitter}}
 All of the idler modes
-$\mathbf{\hat{S}}_{{I}}^{\textrm{in}}=\pnb{\hat{S}_{I^A_y},\hat{S}_{I^B_y},\hat{S}_{I^A_x},\hat{S}_{I^B_x}}^{\textrm{T}}$
+$\mathbf{\hat{S}}_{{I}}^{\textrm{in}}=\pnb{\hat{S}_{I^A_y},\hat{S}_{I^B_y},\hat{S}_{I^A_x},\hat{S}_{I^B_x}}^{{T}}$
 remain unchanged. The Gaussian mixed-state of the Stokes light arriving at the
 detectors and the idler ensemble excitations is given by the
 antinormally-ordered characteristic function
 \begin{align}
-	& \chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}, \bm{\tilde{\zeta}}}
-        \nonumber \\
-	& \qquad =\langle D_A\pna{\mathbf{\hat{a}}_S^{\textrm{out}}, \bm{\zeta}_S} D_A\pna{\mathbf{\hat{S}}_I^{\textrm{in}}, \bm{\zeta}_I} \rangle\nonumber \\
-	& \qquad = \chi_A^{\rho_{\textrm{in}}}\pna{\pnb{\sqrt{\eta_{m}}\tilde{\zeta}_{S^A_y},\sqrt{\eta_{m}}\tilde{\zeta}_{S^B_y},\sqrt{\eta_{m}}\tilde{\zeta}_{S^A_x},\sqrt{\eta_{m}}\tilde{\zeta}_{S^B_x},
-    \zeta_{I^A_y},\zeta_{I^B_y},\zeta_{I^A_x},\zeta_{I^B_x}}^{T}} \nonumber \\
-    & \qquad \qquad \cdot \exp\pnb{-\sum_{\{\tilde{\zeta}_i\}}\eta^{\textrm{pho}}\pna{1- \eta^{\textrm{pre}}}|\tilde{\zeta}_i|^2-\sum_{\{{\zeta}_i\}}\pna{1-\eta^{\textrm{pho}}}|{\zeta}_i|^2} \label{eqn:chap3:chia_orig}
+	\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}, \bm{\tilde{\zeta}}} & =\langle D_A\pna{\mathbf{\hat{a}}_S^{\textrm{out}}, \bm{\zeta}_S} D_A\pna{\mathbf{\hat{S}}_I^{\textrm{in}}, \bm{\zeta}_I} \rangle\nonumber \\
+	& =
+        \chi_A^{\rho_{\textrm{in}}}\left(
+          \left[\sqrt{\eta_{m}}\tilde{\zeta}_{S^A_y},\sqrt{\eta_{m}}\tilde{\zeta}_{S^B_y},\sqrt{\eta_{m}}\tilde{\zeta}_{S^A_x},
+            \right.\right.\nonumber \\
+    & \left.{}\left.{}\qquad\qquad\sqrt{\eta_{m}}\tilde{\zeta}_{S^B_x}, \zeta_{I^A_y},\zeta_{I^B_y},\zeta_{I^A_x},\zeta_{I^B_x} \right] ^{T}\right) \nonumber \\
+    & \quad \cdot e^{-\sum_{\{\tilde{\zeta}_i\}}\eta^{\textrm{pho}}\pna{1- \eta^{\textrm{pre}}}|\tilde{\zeta}_i|^2-\sum_{\{{\zeta}_i\}}\pna{1-\eta^{\textrm{pho}}}|{\zeta}_i|^2} \label{eqn:chap3:chia_orig}
 \end{align}
 where the scaled $\tilde{\bm{\zeta}}$ result from the transformation of the
 beam splitter transformation in Eqn.~\ref{eqn:chap3:linear_beamsplitter}:
@@ -1459,20 +1472,20 @@ beam splitter transformation in Eqn.~\ref{eqn:chap3:linear_beamsplitter}:
 Rewriting Eqn.~\ref{eqn:chap3:chia_orig} in terms of $\bm{\zeta}$, the
 characteristic function is now
 \begin{align}
-    \chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} 
-    & = \exp\left[-\pna{1+\eta_{m}\bar{N}}\pna{|\zeta_{S_y^A}|^2+|\zeta_{S_x^A}|^2+|\zeta_{S_y^B}|^2+|\zeta_{S_x^B}|^2} \right.\nonumber \\
-    & \qquad \qquad \left.{}-\pna{1+\bar{N}}\pna{|\zeta_{I_y^A}|^2+|\zeta_{I_x^A}|^2+|\zeta_{I_y^B}|^2+|\zeta_{I_x^B}|^2}\right.\nonumber \\ 
-    & \qquad \qquad \left. {} +\tilde{N}\sqrt{2\eta_{m}}\left[
-    \textrm{Re}\pna{\zeta_{S_x^A} \zeta_{I_y^A}}
+  \chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} & =
+  e^{-\pna{1+\eta_{m}\bar{N}}\pna{|\zeta_{S_y^A}|^2+|\zeta_{S_x^A}|^2+|\zeta_{S_y^B}|^2+|\zeta_{S_x^B}|^2}}
+  \nonumber \\
+&  \quad\cdot
+e^{-\pna{1+\bar{N}}\pna{|\zeta_{I_y^A}|^2+|\zeta_{I_x^A}|^2+|\zeta_{I_y^B}|^2+|\zeta_{I_x^B}|^2}}
+\nonumber \\
+&  \quad\cdot e^{\tilde{N}\sqrt{2\eta_{m}}\pnb{\textrm{Re}\pna{\zeta_{S_x^A} \zeta_{I_y^A}}
     +\textrm{Re}\pna{\zeta_{S_x^B}\zeta_{I_y^A}}
-    -\textrm{Re}\pna{\zeta_{S_y^A}\zeta_{I_x^A}}
-    -\textrm{Re}\pna{\zeta_{S_y^B} \zeta_{I_x^A}}\right.\right.\nonumber \\
-    & \qquad \qquad \left.\left. {} 
-    +\textrm{Re}\pna{\zeta_{S_x^A}\zeta_{I_y^B}}
+    -\textrm{Re}\pna{\zeta_{S_y^A}\zeta_{I_x^A}}}}\nonumber \\
+&  \quad\cdot e^{\tilde{N}\sqrt{2\eta_{m}}\pnb{\textrm{Re}\pna{\zeta_{S_x^A}\zeta_{I_y^B}}
     -\textrm{Re}\pna{\zeta_{S_x^B}\zeta_{I_y^B}}
-    -\textrm{Re}\pna{\zeta_{S_y^A}\zeta_{I_x^B}}
-    +\textrm{Re}\pna{\zeta_{S_y^B} \zeta_{I_x^B}}\right]\right].
-    \label{eq:char_final}
+    -\textrm{Re}\pna{\zeta_{S_y^A}\zeta_{I_x^B}}}} \nonumber \\
+&  \quad\cdot e^{\tilde{N}\sqrt{2\eta_{m}}\pnb{\textrm{Re}\pna{\zeta_{S_y^B} \zeta_{I_x^B}}-\textrm{Re}\pna{\zeta_{S_y^B} \zeta_{I_x^A}}}} 
+\label{eq:char_final}
 \end{align}
 
 A useful property of Gaussian antinormally-ordered characteristic functions is
@@ -1524,15 +1537,15 @@ D_N\pna{\hat{S}_{I_i^B},\zeta_{I_i^B}}  \nonumber \\
 \prod_{i=x,y}
 \frac{d^2 \zeta_{S_i^A}}{\pi^2} 
 \frac{d^2 \zeta_{S_i^B}}{\pi^2}
-\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} 
-D_N\pna{\hat{a}_{S_i^A}',\zeta_{S_i^A}} 
+\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} \nonumber \\
+&\qquad \qquad \cdot D_N\pna{\hat{a}_{S_i^A}',\zeta_{S_i^A}} 
 D_N\pna{\hat{a}_{S_i^B}',\zeta_{S_i^B}},
 \label{eq:fourier_char}
 \end{align}
-where $D_N\pna{\hat{a}_i,\zeta_i}=e^{-\zeta_i \hat{a}_i^{\dagger}}e^{\zeta_i^*
-  \hat{a}_i}$ is the normally-ordered displacement operator. To perform trace
-operations on the operator-valued Fourier transform in
-Eqn.~\ref{eq:fourier_char}, we know that
+where $D_N\pna{\hat{a}_i,\zeta_i}=e^{-\zeta_i
+  \hat{a}_i^{\dagger}}e^{\zeta_i^*\hat{a}_i}$ is the normally-ordered
+displacement operator. To perform trace operations on the operator-valued
+Fourier transform in Eqn.~\ref{eq:fourier_char}, we know that
 \eqn{
 \bra{0} D_N\pna{\hat{a}_i,\zeta_i} \ket{0}=1 \qquad  \bra{1}D_N\pna{\hat{a}_i,\zeta_i}\ket{1}=1-|\zeta_i|^2
 }
@@ -1574,18 +1587,17 @@ $\mathbf{y}-$polarized click at $D_B$, and co-polarized clicks at both $D_A$
 and $D_B$. Applying these trace identities in a PNRD scheme, the
 post-measurement state of the ensembles is
 \begin{align}
-\hat{\rho}_{\textrm{post}}^{yx}& =
+\hat{\rho}_{\textrm{post}}^{yx}&=
 \frac{1}{P_{h}^{yx}}\int 
 \prod_{i=x,y}
 \frac{d^2 \zeta_{I_i^A}}{\pi^2} 
-\frac{d^2 \zeta_{I_i^B}}{\pi^2} 
-D_N\pna{\hat{S}_{I_i^A},\zeta_{I_i^A}} 
+\frac{d^2 \zeta_{I_i^B}}{\pi^2} \nonumber \\
+& \qquad\qquad \cdot D_N\pna{\hat{S}_{I_i^A},\zeta_{I_i^A}} 
 D_N\pna{\hat{S}_{I_i^B},\zeta_{I_i^B}}  \nonumber \\
-& \qquad \cdot \int 
+& \quad \cdot \int 
 \frac{d^2 \zeta_{S_y^A}}{\pi^2} 
 \frac{d^2 \zeta_{S_x^B}}{\pi^2}
-\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} 
-\pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2},
+\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2},
 \end{align}
 where the heralding probability is
 \begin{align}
