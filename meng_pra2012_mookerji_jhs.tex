@@ -1025,10 +1025,11 @@ Eqn.~\ref{eq:chap3:meas_povm}. Applied to the joint state density operator in
 Eqn.~\ref{eqn:joint_state_lossless}, the post-measurement state of the
 ensembles is
 \begin{align}
-\hat{\rho}_{\textrm{post}}^{1}& =\sum_{N_i^p, N_i^{p\prime}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{0,N_1^p}^{n,m}\pna{\frac{1}{2}}  
-B_{N_4^p,0}^{m,n}\pna{\frac{1}{2}}\pnb{B_{0,N_1^{p\prime}}^{n',m'}\pna{\frac{1}{2}}  
-B_{N_4^{p\prime},0}^{m',n'}\pna{\frac{1}{2}}}^* \nonumber \\
-& \qquad\qquad\qquad\cdot  \pna{1-\delta_{0,N_1^{p}}\delta_{0,N_1^{p\prime}} - \delta_{0,N_4^{p}}\delta_{0,N_4^{p\prime}} + \delta_{0,N_1^{p}}\delta_{0,N_1^{p\prime}} \delta_{0,N_4^{p}}\delta_{0,N_4^{p\prime}}}\ket{n_i}^i_S\bra{n_i^{\prime}}^i_S \nonumber \\
+&\hat{\rho}_{\textrm{post}}^{1} \nonumber \\
+%=\sum_{N_i^p, N_i^{p\prime}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{0,N_1^p}^{n,m}\pna{\frac{1}{2}}  
+%B_{N_4^p,0}^{m,n}\pna{\frac{1}{2}}\pnb{B_{0,N_1^{p\prime}}^{n',m'}\pna{\frac{1}{2}}  
+%B_{N_4^{p\prime},0}^{m',n'}\pna{\frac{1}{2}}}^* \nonumber \\
+%& \qquad\qquad\qquad\cdot  \pna{1-\delta_{0,N_1^{p}}\delta_{0,N_1^{p\prime}} - \delta_{0,N_4^{p}}\delta_{0,N_4^{p\prime}} + \delta_{0,N_1^{p}}\delta_{0,N_1^{p\prime}} \delta_{0,N_4^{p}}\delta_{0,N_4^{p\prime}}}\ket{n_i}^i_S\bra{n_i^{\prime}}^i_S \nonumber \\
 & = \sum_{n,m} \abs{f_{n,m\pna{\bar{N}}} B_{0,n+m}^{n,m}\pna{\frac{1}{2}} B_{n+m,0}^{m,n}\pna{\frac{1}{2} }}^2 \ket{n_i}^i_S\bra{n_i}^i_S
 \end{align}
 In the last step's simplification, we have enforced the photon number
@@ -1107,9 +1108,7 @@ excitations, and noise modes is given by,
 	f_{n,m}\pna{\bar{N}}
 	B_{N_i^a,N_i^{\textrm{pre}}}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}  
 	B_{N_2,N_1}^{N_1^a,N_2^a}\pna{\frac{1}{2}}  
-	B_{N_4,N_3}^{N_3^a,N_4^a}\pna{\frac{1}{2}}\nonumber \\
-	& \qquad \qquad \qquad \qquad \qquad
-	\cdot B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}}  
+	B_{N_4,N_3}^{N_3^a,N_4^a}\pna{\frac{1}{2}} B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}}  
 	\ket{N_i^p}^i_p
 	\ket{N_i^a}^i_S 
 	\ket{N_i^{\textrm{pre}}}^i_{\textrm{pre}}
@@ -1131,12 +1130,10 @@ $N_2$ summations). Tracing out the noise modes and and applying photon-number
 conservation to eliminate nested summations, the PNRD heralding probability for
 single-photon counts at detectors $D_1$ and $D_4$ is given by
 \begin{align}
-	P_{1}^{\textrm{PNRD}}&=\sum_{N_i^a,N_i}\sum_{n,m}
-	\left| f_{n,m}\pna{\bar{N}}
+	P_{1}^{\textrm{PNRD}}=\left| f_{n,m}\pna{\bar{N}}
 	B_{N_i^a,n_i-N_i^a}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}
 	B_{N_2,N_1}^{N_1^a,N_2^a}\pna{\frac{1}{2}}  
-	B_{N_4,N_3}^{N_3^a,N_4^a}\pna{\frac{1}{2}} \right. \nonumber \\
-	& \qquad \qquad \qquad\left.~\cdot B_{1,N_1-1}^{N_1,0}\pna{\eta_1^{\textrm{pho}}} 
+	B_{N_4,N_3}^{N_3^a,N_4^a}\pna{\frac{1}{2}} B_{1,N_1-1}^{N_1,0}\pna{\eta_1^{\textrm{pho}}} 
 	B_{0,N_2}^{N_2,0}\pna{\eta_2^{\textrm{pho}}} 
 	B_{0,N_3}^{N_3,0}\pna{\eta_3^{\textrm{pho}}} 
 	B_{1,N_4-1}^{N_4,0}\pna{\eta_4^{\textrm{pho}}} \right|^2. 
@@ -1148,17 +1145,15 @@ the NRPD POVM and photon-number conservation, as in
 Eqn.~\ref{eqn:post:lossless}, and factoring the remaining photodetection
 efficiency amplitudes gives the heralding probability:
 \begin{align}
-	&P_{1}^{\textrm{NRPD}}= \nonumber \\
-	& \sum_{N_i^a,N_i}\sum_{n,m}
+	&P_{1}^{\textrm{NRPD}}= \sum_{N_i^a,N_i}\sum_{n,m}
 	\left|f_{n,m}\pna{\bar{N}}
 	B_{N_i^a,n_i-N_i^a}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}
 	B_{N_2,N_1}^{N_1^a,N_2^a}\pna{\frac{1}{2}}
 	B_{N_4,N_3}^{N_3^a,N_4^a}\pna{\frac{1}{2}} 
 	B_{0,N_2}^{N_2,0}\pna{\eta_2^{\textrm{pho}}} 
 	B_{0,N_3}^{N_3,0}\pna{\eta_3^{\textrm{pho}}}\right|^2\nonumber \\
-	&  \pnb{\abs{B_{0,N_1}^{N_1,0}\pna{\eta_1^{\textrm{pho}}}}^2-\sum_{N_1^p=0}^{N_1} \abs{B_{N_1^p,N_1-N_1^p}^{N_1,0}\pna{\eta_1^{\textrm{pho}}}}^2} \pnb{\abs{B_{0,N_4}^{N_4,0}\pna{\eta_4^{\textrm{pho}}}}^2-\sum_{N_4^p=0}^{N_4} \abs{B_{N_4^p,N_4-N_4^p}^{N_4,0}\pna{\eta_4^{\textrm{pho}}}}^2}.
+	&  \qquad \pnb{\abs{B_{0,N_1}^{N_1,0}\pna{\eta_1^{\textrm{pho}}}}^2-\sum_{N_1^p=0}^{N_1} \abs{B_{N_1^p,N_1-N_1^p}^{N_1,0}\pna{\eta_1^{\textrm{pho}}}}^2} \pnb{\abs{B_{0,N_4}^{N_4,0}\pna{\eta_4^{\textrm{pho}}}}^2-\sum_{N_4^p=0}^{N_4} \abs{B_{N_4^p,N_4-N_4^p}^{N_4,0}\pna{\eta_4^{\textrm{pho}}}}^2}.
 \end{align}
-\end{widetext}
 The terms of this summation are also the diagonal coefficients of the
 ensembles' post-measurement density operator, which is required for calculating
 the fidelity and overall success probability of the protocol. To avoid
@@ -1175,7 +1170,6 @@ sections, we only list expressions for matching photodetection events at $D_1$
 and $D_4$, as corresponding expressions for $D_2$ and $D_3$ are found by simple
 substitution. Accounting for all losses, the full output state of the
 architecture, as shown in Fig.~\ref{fig:channel_loss_model}, is given by,
-\begin{widetext}
 \begin{align}
 \ket{\psi}_{\textrm{out}} & = \sum_{n,m} f_{n,m}\pna{\bar{N}}
 \sum_{\substack{N_i^a,N_i^{\textrm{pre}},N_i^l,N_i^{\textrm{post}},\\ N_i,N_i^p,N_i^{\textrm{pho}} }}
