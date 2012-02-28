@@ -117,6 +117,7 @@
      "groupedaddress"
      "showpacs"
      "showkeys"
+     "draft"
      "cavity1"
      "raman1"
      "spdc_dlcz_fin"

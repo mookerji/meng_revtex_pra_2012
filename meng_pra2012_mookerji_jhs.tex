@@ -22,7 +22,7 @@
 %  Add 'showpacs' option to make PACS codes appear
 %  Add 'showkeys' option to make keywords appear
 \documentclass[aps,twocolumn,secnumarabic,amsmath,amssymb,pra,groupedaddress,
-showpacs, showkeys]{revtex4-1}
+showpacs, showkeys,draft]{revtex4-1}
 %\documentclass[aps,prl,preprint,superscriptaddress]{revtex4-1}
 %\documentclass[aps,prl,reprint,groupedaddress]{revtex4-1}
 
@@ -750,8 +750,8 @@ heralding has occurred and the four ensembles have loaded a polarization Bell
 state. The fidelity $F_j$ is the projection of the post-heralding ensemble
 state onto the appropriate Bell state for $\hat{M}_j$ heralding, i.e.,
 \begin{align}
-\ket{\psi_j} & 
-=
+& \ket{\psi_j} \nonumber \\
+& =
 \frac{1}{\sqrt{2}}\pna{\ket{1}_S^1\ket{0}_S^2\ket{0}_S^3\ket{1}_S^4+\pna{-1}^j
   \ket{0}_S^1\ket{1}_S^2\ket{1}_S^3\ket{0}_S^4} \nonumber \\ & \qquad \qquad
 \qquad \qquad \pna{j=1,2,3,4}.\label{eqn:remaining_singlet}
@@ -887,7 +887,7 @@ P_{\textrm{in}}\pna{n_1, n_2} & = \rho_{\textrm{in}}\pna{n_1,n_2;n_1,n_2},
 
 The beam splitter's physical symmetries allow us to extend the Jacobi
 polynomials over the full range photon-number output probabilities:
-%\begin{widetext}
+\begin{widetext}
 \eqn{
    R_{N_1,N_2}^{n_1,n_2}\pna{\eta} = \left\{
      \begin{array}{lr}
@@ -897,7 +897,7 @@ polynomials over the full range photon-number output probabilities:
 	0 & n_1+n_2\neq N_1+N_2
      \end{array}
 \right..}
-%\end{widetext}
+\end{widetext}
 We have made the unitary constraint explicit, as the Jacobi polynomials are not
 \emph{ad hoc} restricted to events for which
 $n_1+n_2=N_1+N_2$. Eqn.~\ref{eq:rho_output} simplifies because beam splitter
@@ -932,7 +932,8 @@ redundancy in the notation, we write the Gaussian state in
 Eqn.~\ref{eq:final_singlet}, at all orders, as 
 \begin{align}
 \ket{\psi}_{\textrm{in}}&=\sum_{n,m=0}^{\infty}
-\pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}} \ket{n}_{S_y}\ket{m}_{S_x}\ket{m}_{I_y}\ket{n}_{I_x}
+\pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}} \nonumber \\ 
+& \qquad \qquad \cdot\ket{n}_{S_y}\ket{m}_{S_x}\ket{m}_{I_y}\ket{n}_{I_x}
 \nonumber \\
  & \rightarrow \sum_{n,m=0}^{\infty} f_{n,m}\pna{\bar{N}}\ket{n_i}^i,
 \end{align}
@@ -951,7 +952,7 @@ the heralding photons and the spin excitations in therefore
 \begin{align}
 \ket{\psi}_{\textrm{post-ens.}}& = \sum_{n,m}
 \pna{-1}^n\sqrt{\frac{\bar{N}^{n+m}}{\pna{1+\bar{N}}^{n+m+2}}}  \nonumber \\
-& \qquad \ket{n}^1_b \ket{m}^2_b \ket{m}^3_b \ket{n}^4_b 
+& \qquad \cdot\ket{n}^1_b \ket{m}^2_b \ket{m}^3_b \ket{n}^4_b 
 \ket{n}^1_S \ket{m}^2_S \ket{m}^3_S \ket{n}^4_S  \nonumber  \\
 & \rightarrow \sum_{n,m}f_{n,m}\pna{\bar{N}}\ket{n_i}^i_b\ket{n_i}^i_S.
 \end{align}
@@ -970,25 +971,25 @@ both the signal and idler subsystems in Fig.~\ref{fig:channel_model}, yielding
 $N^p_i$ photons photons at the photodetector $D_i$. The joint output written as
 a pure-state density operator is thus
 \begin{align}
-\hat{\rho}_{\textrm{out}} =\ket{\psi}_{\textrm{out}} \bra{\psi}_{\textrm{out}} & =\sum_{N_i^p, N_i^{p\prime}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{N_2^p,N_1^p}^{n,m}\pna{\frac{1}{2}}  
-B_{N_4^p,N_3^p}^{m,n}\pna{\frac{1}{2}} \nonumber \\
-& \qquad\qquad\qquad\cdot  \pnb{B_{N_2^{p\prime},N_1^{p\prime}}^{n',m'}\pna{\frac{1}{2}}  
-B_{N_4^{p\prime},N_3^{p\prime}}^{m',n'}\pna{\frac{1}{2}}}^*\ket{N_i^{p}}^i_p\ket{n_i}^i_S\bra{N_i^{p\prime}}^i_{p\prime}\bra{n_i^{\prime}}^i_S .\label{eqn:joint_state_lossless}
+\hat{\rho}_{\textrm{out}} & =\sum_{N_i^p, N_i^{p\prime}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{N_2^p,N_1^p}^{n,m}\pna{\frac{1}{2}}   \nonumber \\
+& \qquad\cdot  B_{N_4^p,N_3^p}^{m,n}\pna{\frac{1}{2}}\pnb{B_{N_2^{p\prime},N_1^{p\prime}}^{n',m'}\pna{\frac{1}{2}}  
+B_{N_4^{p\prime},N_3^{p\prime}}^{m',n'}\pna{\frac{1}{2}}}^*\nonumber \\ 
+& \hspace{1.5in}\cdot\ket{N_i^{p}}^i_p\ket{n_i}^i_S\bra{N_i^{p\prime}}^i_{p\prime}\bra{n_i^{\prime}}^i_S .\label{eqn:joint_state_lossless}
 \end{align}
-Following the definition of heralding probability in
+anti
 Eqn.~\ref{eqn:herald_prob}, we trace over all modes and find that photon number
 resolving detectors yield
-\eqn{
-	P_{1}^{h}=\textrm{tr}\pna{\hat{\rho}_{\textrm{out}} \hat{M}_{1}} = \sum_{n,m} \abs{f_{n,m}\pna{\bar{N}} 
-		B_{0,1}^{n,m}\pna{\frac{1}{2}} B_{1,0}^{m,n}\pna{\frac{1}{2}}}^2 =\frac{\bar{N}}{2\pna{1+\bar{N}}^3},\label{eq:chap3:lossless_prob}
-}
+\begin{align}
+	P_{1}^{h} & = \sum_{n,m} \abs{f_{n,m}\pna{\bar{N}} 
+		B_{0,1}^{n,m}\pna{\frac{1}{2}}
+                B_{1,0}^{m,n}\pna{\frac{1}{2}}}^2 \nonumber \\ & =\frac{\bar{N}}{2\pna{1+\bar{N}}^3},\label{eq:chap3:lossless_prob}
+\end{align}
 where the last equality is calculated by summation expansion. Following
 projective measurement, the joint state of the ensembles is given by the
 mixed-state density operator,
 \begin{align}
-\hat{\rho}_{\textrm{post}}^{1} & = \frac{1}{P_{1}^{h}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{0,1}^{n,m}\pna{\frac{1}{2}}  
-B_{1,0}^{m,n}\pna{\frac{1}{2}} \nonumber \\
-& \qquad\qquad\qquad\qquad \cdot \pnb{B_{0,1}^{n',m'}\pna{\frac{1}{2}}  
+& \hat{\rho}_{\textrm{post}}^{1} \nonumber \\ & = \frac{1}{P_{1}^{h}}\sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}}f_{n',m'}\pna{\bar{N}} B_{0,1}^{n,m}\pna{\frac{1}{2}}   \nonumber \\
+& \quad \cdot B_{1,0}^{m,n}\pna{\frac{1}{2}}\pnb{B_{0,1}^{n',m'}\pna{\frac{1}{2}}  
 B_{1,0}^{m',n'}\pna{\frac{1}{2}}}^*\ket{n_i}^i_S\bra{n_i^{\prime}}^i_S,\label{eqn:post:lossless}
 \end{align}
 which, projected against the ideal singlet state $\ket{\psi_{1}}$ gives the
@@ -1174,8 +1175,7 @@ substitution. Accounting for all losses, the full output state of the
 architecture, as shown in Fig.~\ref{fig:channel_loss_model}, is given by,
 \begin{widetext}
 \begin{align}
-\ket{\psi}_{\textrm{out}} & = \sum_{n,m} f_{n,m}\pna{\bar{N}} \nonumber \\
-& \hspace{-5mm}\cdot
+\ket{\psi}_{\textrm{out}} & = \sum_{n,m} f_{n,m}\pna{\bar{N}}
 \sum_{\substack{N_i^a,N_i^{\textrm{pre}},N_i^l,N_i^{\textrm{post}},\\ N_i,N_i^p,N_i^{\textrm{pho}} }}
 \pnb{\underbrace{B_{N_i^a,N_i^{\textrm{pre}}}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}  
 B_{N_i^l,N_i^{\textrm{post}}}^{N_i^a,0}\pna{\eta_i^{\textrm{post}}}}_\text{Pre-Interference Loss}
@@ -1183,26 +1183,20 @@ B_{N_i^l,N_i^{\textrm{post}}}^{N_i^a,0}\pna{\eta_i^{\textrm{post}}}}_\text{Pre-I
 \underbrace{B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}}}_\text{Photodetection Loss}}   \nonumber \\
 & \qquad \quad \cdot \underbrace{\ket{N_i^p}_{p}^i \ket{N_i^a}_{S}^i}_\text{Heralded \& Ensemble Modes} \underbrace{\ket{N_i^{\textrm{pho}}}_{\textrm{pho}}^i \ket{N_i^{\textrm{post}}}_{\textrm{post}}^i \ket{N_i^{\textrm{pre}}}_{\textrm{pre}}^i}_\text{Auxiliary Noise Modes}. 
 \end{align}
-\end{widetext}
 and the corresponding joint density operator of the heralded photon and
 ensemble modes is 
-\begin{widetext}
 \begin{align}
-	\hat{\rho}_{\textrm{out}}^{p,S} & = \sum_{n,m,n',m'} f_{n,m}\pna{\bar{N}} f_{n',m'}\pna{\bar{N}} \nonumber \\
-	& \qquad \cdot\sum_{\substack{N_i^a,N_i^{\textrm{pre}}\\ N_i^{a\prime} }} \sum_{\substack{N_i^l,N_i^{\textrm{post}}\\ N_i^{l\prime} }}
+	\hat{\rho}_{\textrm{out}}^{p,S} & = \sum_{\substack{n,m,\\n',m'}} f_{n,m}\pna{\bar{N}} f_{n',m'}\pna{\bar{N}} \sum_{\substack{N_i^a,N_i^{\textrm{pre}}\\ N_i^{a\prime} }} \sum_{\substack{N_i^l,N_i^{\textrm{post}}\\ N_i^{l\prime} }}
 	B_{N_i^a,N_i^{\textrm{pre}}}^{n_i,0}\pna{\eta_i^{\textrm{pre}}} B_{N_i^l,N_i^{\textrm{post}}}^{N_i^a,0}\pna{\eta_i^{\textrm{post}}} \pnb{B_{N_i^{a\prime},N_i^{\textrm{pre}}}^{n_i',0}\pna{\eta_i^{\textrm{pre}}} B_{N_i^{l\prime},N_i^{\textrm{post}}}^{N_i^{a\prime},0}\pna{\eta_i^{\textrm{post}}}}^{*} \nonumber \\
 	& \qquad \cdot \sum_{\substack{N_1,N_2,N_3,N_4\\ N_1',N_2',N_3',N_4'}}
 	 B_{N_2,N_1}^{N_1^l,N_2^l}\pna{\frac{1}{2}} B_{N_4,N_3}^{N_3^l,N_4^l}\pna{\frac{1}{2}} \pnb{B_{N_2',N_1'}^{N_1^{l\prime},N_2^{l\prime}}\pna{\frac{1}{2}} B_{N_4',N_3'}^{N_3^{l\prime},N_4^{l\prime}}\pna{\frac{1}{2}}}^{*}\nonumber \\
 	& \qquad \cdot \sum_{\substack{N_i^p,N_i^{\textrm{pho}}\\ N_i^{p\prime} }}
 	 B_{N_i^p,N_i^{\textrm{pho}}}^{N_i,0}\pna{\eta_i^{\textrm{pho}}} \pnb{B_{N_i^{p\prime},N_i^{\textrm{pho}}}^{N_i',0}\pna{\eta_i^{\textrm{pho}}}}^{*} \ket{N_i^p}_{p}^i \ket{N_i^a}_{S}^i \bra{N_i^{p\prime}}_{p}^i \bra{N_i^{a\prime}}_{S}^i,
 \end{align}
-\end{widetext}
 and the PNRD probability that a heralding event $\hat{M}_{1}$ has occurred is
 then
-\begin{widetext}
 \begin{align}
-	P_{1}& =\textrm{tr}\pna{\hat{\rho}_{\textrm{out}}^{p,S} M_{1}}\nonumber \\
-	& = \sum_{n,m}^{\infty} \pnb{f_{n,m}\pna{\bar{N}} }^2 \sum_{N_i^a,N_i^l} \sum_{\substack{N_1,N_2,\\N_3,N_4}} \left|B_{N_i^a,n_i-N_i^a}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}  
+	P_{1} & = \sum_{n,m}^{\infty} \pnb{f_{n,m}\pna{\bar{N}} }^2 \sum_{N_i^a,N_i^l} \sum_{\substack{N_1,N_2,\\N_3,N_4}} \left|B_{N_i^a,n_i-N_i^a}^{n_i,0}\pna{\eta_i^{\textrm{pre}}}  
 	B_{N_i^l,N_i^a-N_i^l}^{N_i^a,0}\pna{\eta_i^{\textrm{post}}}  B_{N_2,N_1}^{N_1^l,N_2^l}\pna{\frac{1}{2}} B_{N_4,N_3}^{N_3^l,N_4^l}\pna{\frac{1}{2}}\right.\nonumber \\
 	& \left.\qquad \cdot B_{1,N_1-1}^{N_1,0}\pna{\eta_1^{\textrm{pho}}}
 	 		B_{0,N_2}^{N_2,0}\pna{\eta_2^{\textrm{pho}}}
@@ -1232,7 +1226,7 @@ then
 \caption{\label{fig:chap3:asymmetric_pnrd_lossy} $F_1$ fidelities with non-uniform pre-transmission losses (PNRD) for $\bar{N}=0.05-0.3~\pna{\Delta \bar{N}=0.05}$. The caption in each subfigure specifies which of $\eta_i^{\textrm{pre}}~\pna{i=1,2,3,4}$ is varied for that calculation; those not specified are fixed at $0.9$.}
 \end{figure*}
 
-\begin{figure}[ht]
+\begin{figure*}[ht]
 \centering
 \subfigure[Heralding probability (uniform loss).]{
 \includegraphics[width=0.47\textwidth]{figures/pnrd_herald_pres.pdf}
@@ -1243,7 +1237,7 @@ then
 \label{fig:chap3:fidelity}
 }
 \caption{\label{fig:chap3:pnrd_data}Figures of merit with uniform losses (PNRD) for $\bar{N}=0.05-0.3~\pna{\Delta\bar{N}=0.05}$. Heralding probabilities are independent of a uniform loss' location: either before (pre-transmission) or after (post-transmission or photodetection) the ensemble (Fig.~\ref{fig:chap3:heralding_prob}). Pre-transmission losses preferentially decrease the fidelity of entanglement distribution compared to post-transmission and photo-detection losses (Fig.~\ref{fig:chap3:fidelity}).}
-\end{figure}
+\end{figure*}
 
 The results of numerical calculations with these expressions are shown in
 Figures~\ref{fig:chap3:pnrd_data}
@@ -1384,15 +1378,11 @@ characteristic function,
 %&=\chi_A^{\rho_{\textrm{in}}^A}\pna{\bm{\zeta}}\chi_A^{\rho_{\textrm{in}}^B}\
 % pna{\bm{\zeta}} \nonumber \\
 \begin{align}
-    \chi_A^{\rho_{\textrm{in}}}\pna{\bm{\zeta}} 
-    & =  \langle D_A\pna{\hat{a}_{S_y^A},\zeta_{S_y^A}}
-        D_A\pna{\hat{a}_{S_x^A},\zeta_{S_x^A}}
-        D_A\pna{\hat{S}_{I_y^A},\zeta_{I_y^A}}
-        D_A\pna{\hat{S}_{I_x^A},\zeta_{I_x^A}} \nonumber \\
-    & \qquad \cdot D_A\pna{\hat{a}_{S_y^B},\zeta_{S_y^B}}
-            D_A\pna{\hat{a}_{S_x^B},\zeta_{S_x^B}}
-            D_A\pna{\hat{S}_{I_y^B},\zeta_{I_y^B}}
-            D_A\pna{\hat{S}_{I_x^B},\zeta_{S_x^B}}\rangle \nonumber \\
+    & \chi_A^{\rho_{\textrm{in}}}\pna{\bm{\zeta}} \nonumber \\
+    & =  \langle \prod_{i=A,B} D_A\pna{\hat{a}_{S_y^A},\zeta_{S_y^A}}
+        D_A\pna{\hat{a}_{S_x^A},\zeta_{S_x^A}} \nonumber \\
+    & \qquad \qquad \cdot    D_A\pna{\hat{S}_{I_y^A},\zeta_{I_y^A}}
+        D_A\pna{\hat{S}_{I_x^A},\zeta_{I_x^A}} \rangle \nonumber \\
     & = \exp\left[-\pna{1+\bar{N}}\pna{|\zeta_{S_y^A}|^2+|\zeta_{S_x^A}|^2+|\zeta_{I_y^A}|^2+|\zeta_{I_x^A}|^2} \right.\nonumber \\
     & \qquad \qquad \left.{}-\pna{1+\bar{N}}\pna{|\zeta_{S_y^B}|^2+|\zeta_{S_x^B}|^2+|\zeta_{I_y^B}|^2+|\zeta_{I_x^B}|^2}\right.\nonumber \\ 
     & \qquad \qquad \left. {} +2\textrm{Re}\pna{\tilde{N}\zeta_{S_x^A} \zeta_{I_y^A}}-2\textrm{Re}\pna{\tilde{N}\zeta_{S_y^A} \zeta_{I_x^A}}\right.\nonumber \\
@@ -1472,8 +1462,8 @@ beam splitter transformation in Eqn.~\ref{eqn:chap3:linear_beamsplitter}:
 Rewriting Eqn.~\ref{eqn:chap3:chia_orig} in terms of $\bm{\zeta}$, the
 characteristic function is now
 \begin{align}
-  \chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} & =
-  e^{-\pna{1+\eta_{m}\bar{N}}\pna{|\zeta_{S_y^A}|^2+|\zeta_{S_x^A}|^2+|\zeta_{S_y^B}|^2+|\zeta_{S_x^B}|^2}}
+  & \chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} \nonumber \\
+&  = e^{-\pna{1+\eta_{m}\bar{N}}\pna{|\zeta_{S_y^A}|^2+|\zeta_{S_x^A}|^2+|\zeta_{S_y^B}|^2+|\zeta_{S_x^B}|^2}}
   \nonumber \\
 &  \quad\cdot
 e^{-\pna{1+\bar{N}}\pna{|\zeta_{I_y^A}|^2+|\zeta_{I_x^A}|^2+|\zeta_{I_y^B}|^2+|\zeta_{I_x^B}|^2}}
@@ -1560,7 +1550,7 @@ operator is equivalent to setting $\zeta_i=0$ in its characteristic function,
 so any Gaussian moment calculations in the following may involve a marginal
 distribution of that specified by Eqn.~\ref{eq:chap3:moments}.
 
-\begin{figure}[tb]
+\begin{figure*}[tb]
 	\centering
 	\centering
     \subfigure[Heralding probability.]{
@@ -1578,7 +1568,7 @@ distribution of that specified by Eqn.~\ref{eq:chap3:moments}.
 	%\input{spdc_dlcz_fin.pdf_t}
 	\caption{Figures of merit for Gaussian state entanglement connection (PNRD and NRPD) for $\bar{N}=0.01-0.05~\pna{\Delta N=0.01}$. 
 	\label{fig:merit:entanglement_connection}}
-\end{figure}
+\end{figure*}
 
 We will first consider the particular case of a $\mathbf{y}-$polarized click at
 $D_A$ and a $\mathbf{x}-$polarized click at $D_B$, and then extrapolate to
@@ -1587,26 +1577,23 @@ $\mathbf{y}-$polarized click at $D_B$, and co-polarized clicks at both $D_A$
 and $D_B$. Applying these trace identities in a PNRD scheme, the
 post-measurement state of the ensembles is
 \begin{align}
-\hat{\rho}_{\textrm{post}}^{yx}&=
-\frac{1}{P_{h}^{yx}}\int 
+& \hat{\rho}_{\textrm{post}}^{yx} \nonumber \\
+& = \frac{1}{P_{h}^{yx}}\int 
 \prod_{i=x,y}
 \frac{d^2 \zeta_{I_i^A}}{\pi^2} 
-\frac{d^2 \zeta_{I_i^B}}{\pi^2} \nonumber \\
-& \qquad\qquad \cdot D_N\pna{\hat{S}_{I_i^A},\zeta_{I_i^A}} 
+\frac{d^2 \zeta_{I_i^B}}{\pi^2} D_N\pna{\hat{S}_{I_i^A},\zeta_{I_i^A}} 
 D_N\pna{\hat{S}_{I_i^B},\zeta_{I_i^B}}  \nonumber \\
-& \quad \cdot \int 
+& \qquad  \cdot \int 
 \frac{d^2 \zeta_{S_y^A}}{\pi^2} 
 \frac{d^2 \zeta_{S_x^B}}{\pi^2}
 \chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2},
 \end{align}
 where the heralding probability is
 \begin{align}
-P_{h}^{yx} & =
-\int 
+& P_{h}^{yx} \nonumber \\
+& =\int 
 \frac{d^2 \zeta_{S_y^A}}{\pi^2} 
-\frac{d^2 \zeta_{S_x^B}}{\pi^2} \nonumber \\ 
-& \qquad \cdot
-\chi_A^{\rho_{\textrm{out}}}\pna{\pnb{\zeta_{S_y^A},\zeta_{S_y^B},\zeta_{S_x^A},\zeta_{S_x^B},0,0,0,0}^T}
+\frac{d^2 \zeta_{S_x^B}}{\pi^2}\chi_A^{\rho_{\textrm{out}}}\pna{\pnb{\zeta_{S_y^A},\zeta_{S_y^B},\zeta_{S_x^A},\zeta_{S_x^B},0,0,0,0}^T}
 \nonumber \\ 
 & \qquad \cdot \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2}.
 \end{align}
@@ -1627,8 +1614,8 @@ for the PNRD case. Applying the trace identities in
 Eqn~\ref{eq:chap3:trace_id}, the post-measurement joint density operator for
 the NRPD scheme is
 \begin{align}
-\hat{\rho}_{\textrm{post}}^{yx}& =
-\frac{1}{P_{h}^{yx}}\int \prod_{i=x,y}
+& \hat{\rho}_{\textrm{post}}^{yx} \nonumber \\
+& = \frac{1}{P_{h}^{yx}}\int \prod_{i=x,y}
 \frac{d^2 \zeta_{I_i^A}}{\pi^2} 
 \frac{d^2 \zeta_{I_i^B}}{\pi^2} 
 D_N\pna{\hat{S}_{I_i^A},\zeta_{I_i^A}} 
@@ -1636,8 +1623,8 @@ D_N\pna{\hat{S}_{I_i^B},\zeta_{I_i^B}}  \nonumber \\
 & \qquad \cdot \int 
 \frac{d^2 \zeta_{S_y^A}}{\pi^2} 
 \frac{d^2 \zeta_{S_x^B}}{\pi^2}
-\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} 
-\pnb{\pi\delta\pna{\zeta_{S_y^A}}-1}\pnb{\pi\delta\pna{\zeta_{S_x^B}}-1}.
+\chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} \nonumber \\
+& \qquad \qquad \cdot \pnb{\pi\delta\pna{\zeta_{S_y^A}}-1}\pnb{\pi\delta\pna{\zeta_{S_x^B}}-1}.
 \end{align}
 Tracing out the idler excitation modes, the NRPD heralding probability is 
 \begin{align}
@@ -1688,7 +1675,8 @@ moment factoring
 The fidelity, when a $\mathbf{y}$-polarized $D_A$ click and a
 $\mathbf{x}$-polarized $D_B$ click provide the herald, is given by
 \begin{align}
-F_{yx} & = \bra{\psi_{1}} \hat{\rho}_{\textrm{post}}^{yx} \ket{\psi_1} \nonumber \\
+& F_{yx} \nonumber \\
+& = \bra{\psi_{1}} \hat{\rho}_{\textrm{post}}^{yx} \ket{\psi_1} \nonumber \\
 & =\frac{1}{P_{h}^{yx}}\int 
 \prod_{i=x,y}\frac{d^2 \zeta_{I_i^A}}{\pi^2} 
 \frac{d^2 \zeta_{I_i^B}}{\pi^2} 
@@ -1698,7 +1686,9 @@ F_{yx} & = \bra{\psi_{1}} \hat{\rho}_{\textrm{post}}^{yx} \ket{\psi_1} \nonumber
 \frac{d^2 \zeta_{S_x^B}}{\pi^2}
 \chi_A^{\rho_{\textrm{out}}}\pna{\bm{\zeta}} 
 \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2} \nonumber \\
-& = \frac{1}{D_1 P_{h}^{yx}}\langle \pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2}\pna{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \rangle.
+& = \frac{1}{D_1 P_{h}^{yx}}\langle
+\pna{1-|\zeta_{S_y^A}|^2}\pna{1-|\zeta_{S_x^B}|^2}\nonumber \\ 
+& \qquad \qquad \cdot \pna{1-\frac{|\zeta_{I_x^A}\zeta_{I_y^B}-\zeta_{I_y^A}\zeta_{I_x^B}|^2}{2}}  \rangle.
 \end{align}
 Applying the covariance matrix in Eqn.~\ref{eq:chap3:moments} and the Gaussian
 moment factoring theorem to these higher-order moment expressions, the PNRD
