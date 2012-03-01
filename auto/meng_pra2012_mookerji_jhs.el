@@ -24,6 +24,7 @@
      "eqn:remaining_singlet"
      "eqn:herald_prob"
      "eq:success_prob_def"
+     "sec:distributions"
      "fig:beamsplitter_model"
      "eq:bs_operator_def"
      "eq:beamsplitter_trans"
@@ -71,8 +72,7 @@
      "eq:yx:moment"
      "eq:yy:moment"
      "eqn:fyx_nrpd"
-     "chap:conclusion"
-     "sec:atomic:dlcz")
+     "chap:conclusion")
     (TeX-add-symbols
      '("abs" 1)
      '("soln" 1)
@@ -117,7 +117,6 @@
      "groupedaddress"
      "showpacs"
      "showkeys"
-     "draft"
      "cavity1"
      "raman1"
      "spdc_dlcz_fin"
